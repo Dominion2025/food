@@ -1,1 +1,110 @@
-<h1>Hello World!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Verification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #f5f5f5;
+    }
+    .page {
+      display: none;
+    }
+    .page.active {
+      display: block;
+    }
+    textarea, input, button {
+      display: block;
+      margin: 1rem 0;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Confirmation Code Page -->
+  <div id="page-code" class="page active">
+    <h1>Enter Your Confirmation Code</h1>
+    <textarea id="confirmation-code" rows="4" placeholder="Enter your code here..."></textarea>
+    <button onclick="submitCode()">Submit Code</button>
+  </div>
+
+  <!-- Error Page -->
+  <div id="page-error" class="page">
+    <h1>Invalid Code</h1>
+    <p>The code you entered is not valid. Please try again.</p>
+    <button onclick="goToPage('page-code')">Return</button>
+  </div>
+
+  <!-- Duplicate Code Page -->
+  <div id="page-duplicate" class="page">
+    <h1>Code Already Used</h1>
+    <p>This code has already been used. You can continue, but no changes will be saved.</p>
+    <button onclick="goToPage('page-menu')">Continue Anyway</button>
+  </div>
+
+  <!-- Menu Selection Page -->
+  <div id="page-menu" class="page">
+    <h1>Select Your Options</h1>
+    <form id="menu-form" onsubmit="submitForm(event)">
+      <label><input type="checkbox" name="option1" /> Option 1</label>
+      <label><input type="checkbox" name="option2" /> Option 2</label>
+      <label><input type="checkbox" name="option3" /> Option 3</label>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- Confirmation Page -->
+  <div id="page-confirmation" class="page">
+    <h1>Thank You!</h1>
+    <p>Your selections have been recorded.</p>
+  </div>
+
+  <script>
+    function goToPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+
+    async function submitCode() {
+      const code = document.getElementById('confirmation-code').value.trim();
+
+      if (!code) return alert("Please enter a code.");
+
+      // Simulated server response for demo purposes
+      const response = await fakeVerifyCode(code);
+
+      if (response.status === "invalid") {
+        goToPage('page-error');
+      } else if (response.status === "used") {
+        goToPage('page-duplicate');
+      } else if (response.status === "valid") {
+        goToPage('page-menu');
+      }
+    }
+
+    async function submitForm(event) {
+      event.preventDefault();
+      // You would normally send data to your server here
+      console.log("Form submitted.");
+      goToPage('page-confirmation');
+    }
+
+    // Fake server logic to simulate verification
+    async function fakeVerifyCode(code) {
+      const validCodes = { "VALID123": "valid", "USED123": "used" };
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve({ status: validCodes[code] || "invalid" });
+        }, 500);
+      });
+    }
+  </script>
+
+</body>
+</html>
