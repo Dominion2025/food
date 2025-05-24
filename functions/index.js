@@ -1,19 +1,19 @@
-/**
- * Import function triggers from their respective submodules:
- *
- * const {onCall} = require("firebase-functions/v2/https");
- * const {onDocumentWritten} = require("firebase-functions/v2/firestore");
- *
- * See a full list of supported triggers at https://firebase.google.com/docs/functions
- */
+const functions = require("firebase-functions");
+const fetch = require("node-fetch");
 
-const {onRequest} = require("firebase-functions/v2/https");
-const logger = require("firebase-functions/logger");
+exports.fetchHtml = functions.https.onRequest(async (req, res) => {
+	const url = req.query.url;
 
-// Create and deploy your first functions
-// https://firebase.google.com/docs/functions/get-started
+	if (!url) {
+		return res.status(400).send("Missing ?url parameter");
+	}
 
-// exports.helloWorld = onRequest((request, response) => {
-//   logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+	try {
+		const response = await fetch(url);
+		const html = await response.text();
+		res.set("Access-Control-Allow-Origin", "*"); // allow frontend to call this
+		res.send(html);
+	} catch (error) {
+		res.status(500).send("Error fetching URL");
+	}
+});
