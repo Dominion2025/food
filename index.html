@@ -12,6 +12,7 @@
 		rel="stylesheet">
 	<link rel="stylesheet" href="style.css" />
 	<script src="script.js"></script>
+	<script type="module" src="firebase.js"></script>
 </head>
 
 <body>
@@ -25,7 +26,7 @@
 	<!-- Error Page -->
 	<div id="page-error" class="page">
 		<h1>Invalid Code</h1>
-		<p>The code you entered is not valid. Please try again.</p>
+		<p>Either your code was mistyped, or you are not eligible for </p>
 		<button onclick="goToPage('page-code')">Return</button>
 	</div>
 
@@ -33,8 +34,7 @@
 	<div id="page-duplicate" class="page">
 		<h1>Code Already Used</h1>
 		<p>
-			This code has already been used. You can continue, but no changes will
-			be saved.
+			This code has already been used. You can continue, but any changes made will overwrite your previous selection.
 		</p>
 		<button onclick="goToPage('page-menu')">Continue Anyway</button>
 	</div>

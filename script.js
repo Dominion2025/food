@@ -1,6 +1,20 @@
+import { db } from "./firebase.js";
+import { ref, set } from "firebase/database";
+
 function goToPage(pageId) {
 	document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
 	document.getElementById(pageId).classList.add('active');
+}
+
+function writeUserChoice(id, thursdayDinner, fridayLunch, fridayDinner, saturdayLunch, saturdayDinner) {
+  const userRef = ref(db, `users/${id}`);
+  set(userRef, {
+    thursdayDinner: thursdayDinner,
+    fridayLunch: fridayLunch,
+    fridayDinner: fridayDinner,
+    saturdayLunch: saturdayLunch,
+    saturdayDinner: saturdayDinner
+  });
 }
 
 async function submitCode() {
@@ -15,24 +29,21 @@ async function submitCode() {
 	const parser = new DOMParser();
 	const doc = parser.parseFromString(registrationsHTML, "text/html");
 	const registrations = [doc.getElementById("1373506325").querySelectorAll("tbody tr"), doc.getElementById("1263249048").querySelectorAll("tbody tr"), doc.getElementById("1782656223").querySelectorAll("tbody tr"), doc.getElementById("1560370955").querySelectorAll("tbody tr"), doc.getElementById("1364364484").querySelectorAll("tbody tr"), doc.getElementById("2058449702").querySelectorAll("tbody tr")];
-	const region1 = registrations[0];
-	console.log(region1[2]);
-	const region2 = registrations[1];
-	const region3 = registrations[2];
-	const region4 = registrations[3];
-	const regionCa = registrations[4];
-	const regionCr = registrations[5];
+	
 	validation = "invalid";
-	registrations.forEach(function(region) {
-		region.forEach(function(entry) {
+	outerLoop:
+	for (let i = 0; i < registrations.length; i++) {
+		const region = registrations[i];
+		for (let j = 0; j < region.length; j++) {
+			const entry = region[j];
 			const values = entry.querySelectorAll("td");
-			console.log(values[1].innerHTML);
-			if (values[1].innerHTML == code){
+			if (values[1].innerHTML == code && !(values[9].innerHTML == "35-44" || values[9].innerHTML == "45-Above")){
 				validation = "valid";
 				console.log("Valid code");
+				break outerLoop;
 			}
-		});
-	});
+		}
+	}
 
 
 	if (validation == "invalid") {
