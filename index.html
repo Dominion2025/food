@@ -19,15 +19,25 @@
 	<!-- Confirmation Code Page -->
 	<div id="page-code" class="page active">
 		<h1>Enter Your Confirmation Code</h1>
-		<textarea id="confirmation-code" rows="4" placeholder="XXXXXXXXXXXXX"></textarea>
+		<textarea id="confirmation-code" rows="4" placeholder="ABC123DEF456G"></textarea>
 		<button onclick="submitCode()">Submit Code</button>
+	</div>
+
+	<!-- Loading Page -->
+	<div id="page-loading" class="page">
+		<h1>Loading...</h1>
+		<p>Please wait while we process your request.</p>
 	</div>
 
 	<!-- Error Page -->
 	<div id="page-error" class="page">
 		<h1>Invalid Code</h1>
-		<p>Either your code was mistyped, or you are not eligible for </p>
+		<p>We weren't able to find your registration. Please check your code and try again.</p>
 		<button onclick="goToPage('page-code')">Return</button>
+	</div>
+
+	<div id="page-error-eligibility" class="page">
+		<p>Sorry, you're not eligible for in-package meals. Thank you and God bless!</p>
 	</div>
 
 	<!-- Duplicate Code Page -->

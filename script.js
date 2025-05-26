@@ -1,23 +1,11 @@
-import { db } from "./firebase.js";
-import { ref, set } from "firebase/database";
 
 function goToPage(pageId) {
 	document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
 	document.getElementById(pageId).classList.add('active');
 }
 
-function writeUserChoice(id, thursdayDinner, fridayLunch, fridayDinner, saturdayLunch, saturdayDinner) {
-  const userRef = ref(db, `users/${id}`);
-  set(userRef, {
-    thursdayDinner: thursdayDinner,
-    fridayLunch: fridayLunch,
-    fridayDinner: fridayDinner,
-    saturdayLunch: saturdayLunch,
-    saturdayDinner: saturdayDinner
-  });
-}
-
 async function submitCode() {
+	goToPage('page-loading');
 	const code = document.getElementById('confirmation-code').value.trim();
 
 	if (!code) return alert("Please enter a code.");
@@ -37,9 +25,12 @@ async function submitCode() {
 		for (let j = 0; j < region.length; j++) {
 			const entry = region[j];
 			const values = entry.querySelectorAll("td");
-			if (values[1].innerHTML == code && !(values[9].innerHTML == "35-44" || values[9].innerHTML == "45-Above")){
-				validation = "valid";
-				console.log("Valid code");
+			if (values[1].innerHTML == code){
+				if ((values[9].innerHTML == "35-44" || values[9].innerHTML == "45-Above")) {
+					validation = "ineligible";
+				} else {
+					validation = "valid";
+				}
 				break outerLoop;
 			}
 		}
@@ -50,6 +41,8 @@ async function submitCode() {
 		goToPage('page-error');
 	} else if (validation == "used") {
 		goToPage('page-duplicate');
+	} else if (validation == "ineligible") {
+		goToPage('page-error-eligibility');
 	} else if (validation == "valid") {
 		goToPage('page-menu');
 	}
@@ -60,14 +53,4 @@ async function submitForm(event) {
 	// You would normally send data to your server here
 	console.log("Form submitted.");
 	goToPage('page-confirmation');
-}
-
-// Fake server logic to simulate verification
-async function fakeVerifyCode(code) {
-	const validCodes = { "VALID123": "valid", "USED123": "used" };
-	return new Promise(resolve => {
-		setTimeout(() => {
-			resolve({ status: validCodes[code] || "invalid" });
-		}, 500);
-	});
 }
