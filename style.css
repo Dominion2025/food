@@ -92,7 +92,7 @@ button {
 
 .grid-container {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 	/* 3 columns, adjust as needed */
 	gap: 2rem;
 	/* space between grid items */
@@ -102,19 +102,17 @@ button {
 }
 
 .overlap {
-	width: 400px;
-	height: 313px;
+	width: 300px;
+	height: 500px;
 	border: 2px solid;
 	border-color: #8282824c;
-	border-radius: 3rem;
+	border-radius: 1rem;
 	box-sizing: border-box;
 	background-color: white;
 	color: black;
 	overflow: hidden;
 	position: relative;
-	display: flex;
-	flex-direction: row;
-	/* Changed from column to row */
+	/* display: flex; */
 	align-items: center;
 	justify-content: flex-start;
 	/* Align items to the start */
@@ -122,21 +120,20 @@ button {
 	/* Optional: add some padding */
 }
 
+.description {
+	color: grey;
+}
+
 .overlap img {
-	max-width: 45%;
-	/* Take up less than half the width */
-	max-height: 90%;
+	max-width: 100%;
 	height: auto;
 	display: block;
 	margin-right: 1rem;
-	/* Space between image and text */
-	margin-left: 0;
 }
 
 .overlap .text-wrapper {
-	max-height: 100%;
 	box-sizing: border-box;
-	text-align: left;
+	text-align: center;
 }
 
 .overlap .text-wrapper h4 {
