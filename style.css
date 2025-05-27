@@ -11,6 +11,19 @@ body {
     color: #f1f1f1;
 }
 
+button {
+	font-family: "Inter", sans-serif;
+	font-weight: 700;
+	font-size: 2rem;
+	background-color: #1976d2; /* Material blue */
+	color: #f1f1f1;
+	border: none;
+	border-radius: 0.5rem;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.2s;
+}
+
 h1 {
 	font-family: "Inter", sans-serif;
 	font-weight: 700;
@@ -68,8 +81,7 @@ p {
 /* Form Styles */
 
 input,
-textarea,
-button {
+textarea{
 	font-family: "Inter", sans-serif;
 	display: block;
 	margin: 1rem 0;
