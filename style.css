@@ -3,18 +3,23 @@
 body {
 	font-family: "Inter", sans-serif;
 	padding: 2rem;
-	background: #f5f5f5;
+	background-image: url('Assets/background.jpeg'); /* Update with your image path */
+    background-size: cover;        /* Cover the whole screen */
+    background-repeat: no-repeat;  /* Prevent tiling */
+    background-position: center;   /* Center the image */
+    background-color: #181a1b;
+    color: #f1f1f1;
 }
 
 h1 {
-	font-family: "Montserrat", sans-serif;
+	font-family: "Inter", sans-serif;
 	font-weight: 700;
 	font-size: 5rem;
 	margin-bottom: .5rem;
 }
 
 h2 {
-	font-family: "Montserrat", sans-serif;
+	font-family: "Inter", sans-serif;
 	font-weight: 700;
 	font-size: 10rem;
 	margin-top: .5rem;
@@ -22,7 +27,7 @@ h2 {
 }
 
 h3 {
-	font-family: "Montserrat", sans-serif;
+	font-family: "Inter", sans-serif;
 	font-weight: 700;
 	font-size: 3rem;
 	margin-top: .5rem;
@@ -30,7 +35,7 @@ h3 {
 }
 
 h4 {
-	font-family: "Montserrat", sans-serif;
+	font-family: "Inter", sans-serif;
 	font-weight: 700;
 	font-size: 2rem;
 	margin-top: .5rem;
@@ -54,9 +59,10 @@ p {
 .page.active {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: left;
 	justify-content: center;
 	min-height: 100vh;
+	width: 60%;
 }
 
 /* Form Styles */
@@ -69,6 +75,11 @@ button {
 	margin: 1rem 0;
 	padding: 0.5rem;
 	font-size: 1rem;
+	background-color: #23272a;
+    color: #f1f1f1;
+    border-color: #444;
+    border-radius: 0.5rem;
+    border: 1px solid #444;
 }
 
 /* Hidden Styles */
@@ -91,11 +102,14 @@ button {
 }
 
 .overlap {
-	width: 440px;
+	width: 400px;
 	height: 313px;
 	border: 2px solid;
 	border-color: #8282824c;
+	border-radius: 3rem;
 	box-sizing: border-box;
+	background-color: white;
+	color: black;
 	overflow: hidden;
 	position: relative;
 	display: flex;
@@ -136,7 +150,7 @@ button {
 /* Page Specific Styles */
 
 #page-code textarea {
-	font-family: "Montserrat", sans-serif;
+	font-family: "Inter", sans-serif;
 	font-weight: 700;
 	font-size: 5rem;
 	max-width: 100%;
@@ -197,4 +211,14 @@ button {
 .overlap.selected {
     background: #e3f2fd; /* Light blue, change as desired */
     transition: background 0.2s;
+}
+
+#confirmation-code {
+    border-radius: 10rem; /* Adjust the value for more or less rounding */
+	max-height: fit-content;
+	width: 100%;
+}
+
+a {
+    color: #90caf9;
 }
