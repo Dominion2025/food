@@ -32,19 +32,19 @@
 	<!-- Error Page -->
 	<div id="page-error" class="page">
 		<h1>Invalid Code</h1>
-		<p>We weren't able to find your registration. Please check your code and try again.</p>
+		<p>We weren't able to find your registration.<br>Please check your code and try again.</p>
 		<button onclick="goToPage('page-code')">Return</button>
 	</div>
 
 	<div id="page-error-eligibility" class="page">
-		<p>Sorry, you're not eligible for in-package meals. Thank you and God bless!</p>
+		<p>Thanks for entering your code. Our system has confirmed<br>that you are <b>not eligible</b> for complimentary meals during the convention.<br>However, a variety of meals will be available on-site for purchase!<br>Thanks and God bless!</p>
 	</div>
 
 	<!-- Duplicate Code Page -->
 	<div id="page-duplicate" class="page">
 		<h1>Code Already Used</h1>
 		<p>
-			This code has already been used. You can continue, but any changes made will overwrite your previous
+			This code has already been used. You can continue,<br>but any changes made will overwrite your previous
 			selection.
 		</p>
 		<button onclick="goToPage('page-menu')">Continue Anyway</button>
@@ -52,6 +52,49 @@
 	</div>
 
 	<!-- Menu Selection Pages -->
+	<div id="page-menu-thursday-lunch" class="page">
+		<h1 id="thursday-header">THURSDAY:</h1>
+		<h2>Lunch</h2>
+		<p>Please select your lunch option below.</p>
+		<div class="grid-container">
+			<div class="overlap" onclick="selectMeal('thursday-lunch', 'hot-dog')">
+				<img src="Assets\hot-dog.png" alt="All Beef Hot Dog" />
+				<div class="text-wrapper">
+					<h4>All Beef Hot Dog</h4>
+					<p class="description">Juicy, grilled all-beef frank nestled in a soft bun.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('thursday-lunch', 'pizza-cheese')">
+				<img src="Assets\pizza-cheese.png" alt="Cheese Pizza" />
+				<div class="text-wrapper">
+					<h4>Cheese Pizza</h4>
+					<p class="description">Classic mozzarella, tangy tomato sauce, and a perfectly crisp crust.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('thursday-lunch', 'pizza-chicken')">
+				<img src="Assets\pizza-chicken.png" alt="Chicken Pizza" />
+				<div class="text-wrapper">
+					<h4>Chicken Pizza</h4>
+					<p class="description">Smoky BBQ chicken, gooey mozzarella, and sweet, tangy BBQ sauce on a golden, crispy crust.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('thursday-lunch', 'pizza-pepperoni')">
+				<img src="Assets\pizza-pepperoni.png" alt="Pepperoni Pizza" />
+				<div class="text-wrapper">
+					<h4>Pepperoni Pizza</h4>
+					<p class="description">Zesty pepperoni, melty mozzarella, and rich tomato sauce on a golden, crispy crust.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+		</div>
+		<label>
+			<input type="radio" name="meal-selection-thursday-lunch" value="none" onclick="selectMeal('thursday-lunch', 'none')">I'll be purchasing my own meals on-site, thanks!
+		</label>
+		<button class="next-button" type="button" onclick="goToPage('page-menu-thursday-dinner')">Next</button>
+	</div>
 	<div id="page-menu-thursday-dinner" class="page">
 		<h1 id="thursday-header">THURSDAY:</h1>
 		<h2>Dinner</h2>
@@ -529,6 +572,8 @@
 		<h1>Review Your Selections</h1>
 		<p>Please review your meal selections below. Click on any meal to change it. If everything looks good, click "Submit" to finalize your choices.
 		</p>
+		<h4>THURSDAY LUNCH:</h4>
+		<div id="review-thursday-lunch" onclick="goToPage('page-menu-thursday-lunch')"></div>
 		<h4>THURSDAY DINNER:</h4>
 		<div id="review-thursday-dinner" onclick="goToPage('page-menu-thursday-dinner')"></div>
 		<h4>FRIDAY LUNCH:</h4>

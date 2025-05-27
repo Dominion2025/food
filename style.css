@@ -22,6 +22,7 @@ button {
 	padding: 0.5rem 1rem;
 	cursor: pointer;
 	transition: background-color 0.3s, transform 0.2s;
+	margin-top: 10rem;
 }
 
 h1 {
@@ -124,10 +125,10 @@ textarea{
 	color: black;
 	overflow: hidden;
 	position: relative;
-	/* display: flex; */
-	align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* This centers children horizontally */
 	justify-content: flex-start;
-	/* Align items to the start */
 	padding: 1rem;
 	/* Optional: add some padding */
 }
@@ -137,10 +138,11 @@ textarea{
 }
 
 .overlap img {
-	max-width: 100%;
-	height: auto;
-	display: block;
-	margin-right: 1rem;
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center horizontally */
+	margin-bottom: 5rem;
 }
 
 .overlap .text-wrapper {
@@ -230,4 +232,21 @@ textarea{
 
 a {
     color: #90caf9;
+}
+
+.review-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1.5rem;
+}
+
+.review-row h4 {
+    margin: 0;
+    min-width: 180px; /* Adjust as needed */
+    font-size: 1.3rem;
+}
+
+.review-row > div {
+    flex: 1;
 }

@@ -1,6 +1,7 @@
 import { saveUserChoice, getUserData } from "./firebase.js";
 
 let mealChoices = {
+	"thursday-lunch": "",
 	"thursday-dinner": "",
 	"friday-lunch": "",
 	"friday-dinner": "",
@@ -98,6 +99,7 @@ let mealMetadata = {
 
 function populateReviewPage() {
 	const days = [
+		{ key: 'thursday-lunch', id: 'review-thursday-lunch' },
 		{ key: 'thursday-dinner', id: 'review-thursday-dinner' },
 		{ key: 'friday-lunch', id: 'review-friday-lunch' },
 		{ key: 'friday-dinner', id: 'review-friday-dinner' },
@@ -202,7 +204,7 @@ async function submitCode() {
 	} else if (validation == "ineligible") {
 		goToPage('page-error-eligibility');
 	} else if (validation == "valid") {
-		goToPage('page-menu-thursday-dinner');
+		goToPage('page-menu-thursday-lunch');
 	}
 }
 window.submitCode = submitCode;
@@ -215,6 +217,7 @@ window.selectMeal = selectMeal;
 async function submitForm(event) {
 	saveUserChoice(
 		document.getElementById('confirmation-code').value.trim(),
+		mealChoices['thursday-lunch'],
 		mealChoices['thursday-dinner'],
 		mealChoices['friday-lunch'],
 		mealChoices['friday-dinner'],
