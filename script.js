@@ -146,6 +146,17 @@ document.addEventListener('DOMContentLoaded', function () {
 			this.classList.add('selected');
 		});
 	});
+
+    const textarea = document.getElementById('confirmation-code');
+    if (textarea) {
+        // Submit on Enter
+        textarea.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                submitCode();
+            }
+        });
+    }
 });
 
 async function submitCode() {
