@@ -93,8 +93,8 @@ button {
 .grid-container {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	/* 3 columns, adjust as needed */
-	gap: 2rem;
+	/* 4 columns, adjust as needed */
+	gap: 3rem;
 	/* space between grid items */
 	align-items: center;
 	justify-items: center;
