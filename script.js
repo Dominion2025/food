@@ -81,14 +81,14 @@ let mealMetadata = {
 		description: "Grilled chicken with seasoned rice, served with a Caribbean cabbage mix, beans, and a rich dark sauce drizzle."
 	},
 	"nigerian-chicken": {
-		name: "Nigerian Combo: Jollof Rice w/ Chicken",
-		image: "Assets\\nigerian.png",
+		name: "Jollof Rice w/ Chicken",
+		image: "Assets\\nigerian-chicken.png",
 		description: "Flavor-packed jollof rice served with tender, seasoned chicken and crispy, caramelized fried sweet plantains."
 	},
 	"nigerian-turkey": {
-		name: "Nigerian Combo: Jollof Rice w/ Turkey",
-		image: "Assets\\nigerian.png",
-		description: "Flavor-packed jollof rice served with tender, seasoned turkey and crispy, caramelized fried sweet plantains."
+		name: "Jollof Rice w/ Turkey",
+		image: "Assets\\nigerian-turkey.png",
+		description: "Flavor-packed jollof rice served with tender, seasoned chopped turkey and crispy, caramelized fried sweet plantains."
 	},
 	"none": {
 		name: "No Meal",
@@ -134,8 +134,8 @@ function goToPage(pageId) {
 	document.getElementById(pageId).classList.add('active');
 	window.scrollTo({ top: 0, behavior: 'smooth' });
 	if (pageId === 'page-review') {
-        populateReviewPage();
-    }
+		populateReviewPage();
+	}
 }
 window.goToPage = goToPage;
 
@@ -149,16 +149,16 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	});
 
-    const textarea = document.getElementById('confirmation-code');
-    if (textarea) {
-        // Submit on Enter
-        textarea.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                submitCode();
-            }
-        });
-    }
+	const textarea = document.getElementById('confirmation-code');
+	if (textarea) {
+		// Submit on Enter
+		textarea.addEventListener('keydown', function (e) {
+			if (e.key === 'Enter') {
+				e.preventDefault();
+				submitCode();
+			}
+		});
+	}
 });
 
 async function submitCode() {
