@@ -11,15 +11,15 @@
 		href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
 		rel="stylesheet">
 	<link rel="stylesheet" href="style.css" />
-	<script src="script.js"></script>
-	<script type="module" src="firebase.js"></script>
+	<script type="module" src="firebase.js" defer></script>
+	<script type="module" src="script.js" defer></script>
 </head>
 
 <body>
 	<!-- Confirmation Code Page -->
 	<div id="page-code" class="page active">
 		<h1>Enter Your Confirmation Code</h1>
-		<textarea id="confirmation-code" rows="4" placeholder="ABC123DEF456G"></textarea>
+		<textarea id="confirmation-code" rows="1" placeholder="ABC123DEF456G"></textarea>
 		<button onclick="submitCode()">Submit Code</button>
 	</div>
 
@@ -44,26 +44,490 @@
 	<div id="page-duplicate" class="page">
 		<h1>Code Already Used</h1>
 		<p>
-			This code has already been used. You can continue, but any changes made will overwrite your previous selection.
+			This code has already been used. You can continue, but any changes made will overwrite your previous
+			selection.
 		</p>
 		<button onclick="goToPage('page-menu')">Continue Anyway</button>
+		<button onclick="goToPage('page-code')">Return</button>
 	</div>
 
-	<!-- Menu Selection Page -->
-	<div id="page-menu" class="page">
-		<h1>Select Your Options</h1>
-		<form id="menu-form" onsubmit="submitForm(event)">
-			<label><input type="checkbox" name="option1" /> Option 1</label>
-			<label><input type="checkbox" name="option2" /> Option 2</label>
-			<label><input type="checkbox" name="option3" /> Option 3</label>
-			<button type="submit">Submit</button>
-		</form>
+	<!-- Menu Selection Pages -->
+	<div id="page-menu-thursday-dinner" class="page">
+		<h1 id="thursday-header">THURSDAY:</h1>
+		<h2>Dinner</h2>
+		<p>Please select your dinner option below.</p>
+		<h3>PLATES:</h3>
+		<div class="grid-container">
+			<div class="overlap" onclick="selectMeal('thursday-dinner', 'chinese-chow')">
+				<img src="Assets\chinese-chow.png" alt="Chinese Combo w/ Lo Mein" />
+				<div class="text-wrapper">
+					<h4>Chinese Combo w/ Lo Mein</h4>
+					<p>Savory stir-fried noodles paired with flavorful Chinese-style entrées.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('thursday-dinner', 'chinese-rice')">
+				<img src="Assets\chinese-rice.png" alt="Chinese Combo w/ Fried Rice" />
+				<div class="text-wrapper">
+					<h4>Chinese Combo w/ Fried Rice</h4>
+					<p>Fluffy, seasoned fried rice served alongside flavorful Chinese-style entrées.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('thursday-dinner', 'american')">
+				<img src="Assets\american.png" alt="American Classic" />
+				<div class="text-wrapper">
+					<h4>American Classic</h4>
+					<p>Spicy, saucy boneless chicken paired with creamy mac and cheese, smooth mashed potatoes, and rich
+						gravy.</p>
+				</div>
+			</div>
+			<div class="overlap" onclick="selectMeal('thursday-dinner', 'caribbean')">
+				<img src="Assets\caribbean.png" alt="Caribbean Chicken N' Rice" />
+				<div class="text-wrapper">
+					<h4>Caribbean Chicken N' Rice</h4>
+					<p>Grilled chicken with seasoned rice, served with a Caribbean cabbage mix, beans, and a rich dark
+						sauce drizzle.</p>
+				</div>
+			</div>
+		</div>
+		<h3>NIGERIAN:</h3>
+		<div class="grid-container">
+			<div class="overlap" onclick="selectMeal('thursday-dinner', 'nigerian-chicken')">
+				<img src="Assets\nigerian.png" alt="Nigerian Combo: Jollof Rice w/ Chicken" />
+				<div class="text-wrapper">
+					<h4>Nigerian Combo: Jollof Rice w/ Chicken</h4>
+					<p>Flavor-packed jollof rice served with tender, seasoned chicken and crispy, caramelized fried
+						sweet plantains.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('thursday-dinner', 'nigerian-turkey')">
+				<img src="Assets\nigerian.png" alt="Nigerian Combo: Jollof Rice w/ Turkey" />
+				<div class="text-wrapper">
+					<h4>Nigerian Combo: Jollof Rice w/ Turkey</h4>
+					<p>Flavor-packed jollof rice served with tender, seasoned turkey and crispy, caramelized fried sweet
+						plantains.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+		</div>
+		<h3>PIZZA:</h3>
+		<div class="grid-container">
+			<div class="overlap" onclick="selectMeal('thursday-dinner', 'pizza-cheese')">
+				<img src="Assets\pizza-cheese.png" alt="Cheese Pizza" />
+				<div class="text-wrapper">
+					<h4>Cheese Pizza</h4>
+					<p>Classic mozzarella, tangy tomato sauce, and a perfectly crisp crust.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('thursday-dinner', 'pizza-chicken')">
+				<img src="Assets\pizza-chicken.png" alt="Chicken Pizza" />
+				<div class="text-wrapper">
+					<h4>Chicken Pizza</h4>
+					<p>Smoky BBQ chicken, gooey mozzarella, and sweet, tangy BBQ sauce on a golden, crispy crust.</p>
+				</div>
+			</div>
+			<div class="overlap" onclick="selectMeal('thursday-dinner', 'pizza-pepperoni')">
+				<img src="Assets\pizza-pepperoni.png" alt="Pepperoni Pizza" />
+				<div class="text-wrapper">
+					<h4>Pepperoni Pizza</h4>
+					<p>Zesty pepperoni, melty mozzarella, and rich tomato sauce on a golden, crispy crust.</p>
+				</div>
+			</div>
+		</div>
+		<button class="none-button" type="button" onclick="selectMeal('thursday-dinner', 'none')">I'll be purchasing my
+			own meals on-site, thanks!</button>
+		<button class="next-button" type="button" onclick="goToPage('page-menu-friday-lunch')">Next</button>
+	</div>
+	<div id="page-menu-friday-lunch" class="page">
+		<h1 id="friday-header">FRIDAY:</h1>
+		<h2>Lunch</h2>
+		<p>Please select your lunch option below.</p>
+		<h3>HANDHELDS:</h3>
+		<div class="grid-container">
+			<div class="overlap" onclick="selectMeal('friday-lunch', 'hot-dog')">
+				<img src="Assets\hot-dog.png" alt="All Beef Hot Dog" />
+				<div class="text-wrapper">
+					<h4>All Beef Hot Dog</h4>
+					<p>Juicy, grilled all-beef frank nestled in a soft bun.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('friday-lunch', 'chicken-bake')">
+				<img src="Assets\chicken-bake.png" alt="Chicken Bake Wraps" />
+				<div class="text-wrapper">
+					<h4>Chicken Bake Wraps</h4>
+					<p>Tender chicken, smoky bacon, and melted cheese wrapped in golden, buttery dough.</p>
+				</div>
+			</div>
+			<div class="overlap" onclick="selectMeal('friday-lunch', 'popeyes')">
+				<img src="Assets\chicken.png" alt="Popeyes Combo" />
+				<div class="text-wrapper">
+					<h4>Popeyes Combo</h4>
+					<p>Crispy, golden-fried chicken paired with two soft dinner rolls.</p>
+				</div>
+			</div>
+		</div>
+		<h3>SANDWICHES:</h3>
+		<div class="grid-container">
+			<div class="overlap" onclick="selectMeal('friday-lunch', 'turkey-sub')">
+				<img src="Assets\sub-turkey.png" alt="Turkey Sub" />
+				<div class="text-wrapper">
+					<h4>Turkey Sub</h4>
+					<p>Sliced turkey, melty cheese, and garden-fresh toppings on warm, toasty bread - served with a
+						classic bag of chips on the side.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('friday-lunch', 'tuna-sub')">
+				<img src="Assets\sub-tuna.png" alt="Tuna Sub" />
+				<div class="text-wrapper">
+					<h4>Tuna Sub</h4>
+					<p>Zesty tuna salad, fresh veggies, and a soft, toasted roll for the perfect bite - served with a
+						classic bag of chips on the side.</p>
+				</div>
+			</div>
+			<div class="overlap" onclick="selectMeal('friday-lunch', 'veggie-sub')">
+				<img src="Assets\sub-veggie.png" alt="Veggie Sub" />
+				<div class="text-wrapper">
+					<h4>Veggie Sub</h4>
+					<p>Crisp lettuce, juicy tomatoes, crunchy cucumbers, and melty cheese stacked high on a warm,
+						toasted roll - served with a classic bag of chips on the side.</p>
+				</div>
+			</div>
+			<div class="overlap" onclick="selectMeal('friday-lunch', 'chicken-sandwich')">
+				<img src="Assets\chicken-sandwich.png" alt="Crispy Chicken Sandwich" />
+				<div class="text-wrapper">
+					<h4>Crispy Chicken Sandwich</h4>
+					<p>Crispy fried chicken, fresh lettuce, and creamy mayo on a soft, toasted bun—served with a bag of
+						crunchy chips on the side.</p>
+				</div>
+			</div>
+		</div>
+		<h3>PIZZA:</h3>
+		<div class="grid-container">
+			<div class="overlap" onclick="selectMeal('friday-lunch', 'pizza-cheese')">
+				<img src="Assets\pizza-cheese.png" alt="Cheese Pizza" />
+				<div class="text-wrapper">
+					<h4>Cheese Pizza</h4>
+					<p>Classic mozzarella, tangy tomato sauce, and a perfectly crisp crust.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('friday-lunch', 'pizza-chicken')">
+				<img src="Assets\pizza-chicken.png" alt="Chicken Pizza" />
+				<div class="text-wrapper">
+					<h4>Chicken Pizza</h4>
+					<p>Smoky BBQ chicken, gooey mozzarella, and sweet, tangy BBQ sauce on a golden, crispy crust.</p>
+				</div>
+			</div>
+			<div class="overlap" onclick="selectMeal('friday-lunch', 'pizza-pepperoni')">
+				<img src="Assets\pizza-pepperoni.png" alt="Pepperoni Pizza" />
+				<div class="text-wrapper">
+					<h4>Pepperoni Pizza</h4>
+					<p>Zesty pepperoni, melty mozzarella, and rich tomato sauce on a golden, crispy crust.</p>
+				</div>
+			</div>
+		</div>
+		<button class="none-button" type="button" onclick="selectMeal('friday-lunch', 'none')">I'll be purchasing my own
+			meals on-site, thanks!</button>
+		<button class="next-button" type="button" onclick="goToPage('page-menu-friday-dinner')">Next</button>
+	</div>
+	<div id="page-menu-friday-dinner" class="page">
+		<h1 id="friday-header">FRIDAY:</h1>
+		<h2>Dinner</h2>
+		<p>Please select your dinner option below.</p>
+		<h3>PLATES:</h3>
+		<div class="grid-container">
+			<div class="overlap" onclick="selectMeal('friday-dinner', 'chinese-chow')">
+				<img src="Assets\chinese-chow.png" alt="Chinese Combo w/ Lo Mein" />
+				<div class="text-wrapper">
+					<h4>Chinese Combo w/ Lo Mein</h4>
+					<p>Savory stir-fried noodles paired with flavorful Chinese-style entrées.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('friday-dinner', 'chinese-rice')">
+				<img src="Assets\chinese-rice.png" alt="Chinese Combo w/ Fried Rice" />
+				<div class="text-wrapper">
+					<h4>Chinese Combo w/ Fried Rice</h4>
+					<p>Fluffy, seasoned fried rice served alongside flavorful Chinese-style entrées.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('friday-dinner', 'american')">
+				<img src="Assets\american.png" alt="American Classic" />
+				<div class="text-wrapper">
+					<h4>American Classic</h4>
+					<p>Spicy, saucy boneless chicken paired with creamy mac and cheese, smooth mashed potatoes, and rich
+						gravy.</p>
+				</div>
+			</div>
+			<div class="overlap" onclick="selectMeal('friday-dinner', 'caribbean')">
+				<img src="Assets\caribbean.png" alt="Caribbean Chicken N' Rice" />
+				<div class="text-wrapper">
+					<h4>Caribbean Chicken N' Rice</h4>
+					<p>Grilled chicken with seasoned rice, served with a Caribbean cabbage mix, beans, and a rich dark
+						sauce drizzle.</p>
+				</div>
+			</div>
+		</div>
+		<h3>NIGERIAN:</h3>
+		<div class="grid-container">
+			<div class="overlap" onclick="selectMeal('friday-dinner', 'nigerian-chicken')">
+				<img src="Assets\nigerian.png" alt="Nigerian Combo: Jollof Rice w/ Chicken" />
+				<div class="text-wrapper">
+					<h4>Nigerian Combo: Jollof Rice w/ Chicken</h4>
+					<p>Flavor-packed jollof rice served with tender, seasoned chicken and crispy, caramelized fried
+						sweet plantains.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('friday-dinner', 'nigerian-turkey')">
+				<img src="Assets\nigerian.png" alt="Nigerian Combo: Jollof Rice w/ Turkey" />
+				<div class="text-wrapper">
+					<h4>Nigerian Combo: Jollof Rice w/ Turkey</h4>
+					<p>Flavor-packed jollof rice served with tender, seasoned turkey and crispy, caramelized fried sweet
+						plantains.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+		</div>
+		<h3>PIZZA:</h3>
+		<div class="grid-container">
+			<div class="overlap" onclick="selectMeal('friday-dinner', 'pizza-cheese')">
+				<img src="Assets\pizza-cheese.png" alt="Cheese Pizza" />
+				<div class="text-wrapper">
+					<h4>Cheese Pizza</h4>
+					<p>Classic mozzarella, tangy tomato sauce, and a perfectly crisp crust.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('friday-dinner', 'pizza-chicken')">
+				<img src="Assets\pizza-chicken.png" alt="Chicken Pizza" />
+				<div class="text-wrapper">
+					<h4>Chicken Pizza</h4>
+					<p>Smoky BBQ chicken, gooey mozzarella, and sweet, tangy BBQ sauce on a golden, crispy crust.</p>
+				</div>
+			</div>
+			<div class="overlap" onclick="selectMeal('friday-dinner', 'pizza-pepperoni')">
+				<img src="Assets\pizza-pepperoni.png" alt="Pepperoni Pizza" />
+				<div class="text-wrapper">
+					<h4>Pepperoni Pizza</h4>
+					<p>Zesty pepperoni, melty mozzarella, and rich tomato sauce on a golden, crispy crust.</p>
+				</div>
+			</div>
+		</div>
+		<button class="none-button" type="button">I'll be purchasing my own meals on-site, thanks!</button>
+		<button class="next-button" type="button" onclick="goToPage('page-menu-saturday-lunch')">Next</button>
+	</div>
+	<div id="page-menu-saturday-lunch" class="page">
+		<h1 id="saturday-header">SATURDAY:</h1>
+		<h2>Lunch</h2>
+		<p>Please select your lunch option below.</p>
+		<h3>HANDHELDS:</h3>
+		<div class="grid-container">
+			<div class="overlap" onclick="selectMeal('saturday-lunch', 'hot-dog')">
+				<img src="Assets\hot-dog.png" alt="All Beef Hot Dog" />
+				<div class="text-wrapper">
+					<h4>All Beef Hot Dog</h4>
+					<p>Juicy, grilled all-beef frank nestled in a soft bun.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('saturday-lunch', 'chicken-bake')">
+				<img src="Assets\chicken-bake.png" alt="Chicken Bake Wraps" />
+				<div class="text-wrapper">
+					<h4>Chicken Bake Wraps</h4>
+					<p>Tender chicken, smoky bacon, and melted cheese wrapped in golden, buttery dough.</p>
+				</div>
+			</div>
+			<div class="overlap" onclick="selectMeal('saturday-lunch', 'popeyes')">
+				<img src="Assets\chicken.png" alt="Popeyes Combo" />
+				<div class="text-wrapper">
+					<h4>Popeyes Combo</h4>
+					<p>Crispy, golden-fried chicken paired with two soft dinner rolls.</p>
+				</div>
+			</div>
+		</div>
+		<h3>SANDWICHES:</h3>
+		<div class="grid-container">
+			<div class="overlap" onclick="selectMeal('saturday-lunch', 'turkey-sub')">
+				<img src="Assets\sub-turkey.png" alt="Turkey Sub" />
+				<div class="text-wrapper">
+					<h4>Turkey Sub</h4>
+					<p>Sliced turkey, melty cheese, and garden-fresh toppings on warm, toasty bread - served with a
+						classic bag of chips on the side.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('saturday-lunch', 'tuna-sub')">
+				<img src="Assets\sub-tuna.png" alt="Tuna Sub" />
+				<div class="text-wrapper">
+					<h4>Tuna Sub</h4>
+					<p>Zesty tuna salad, fresh veggies, and a soft, toasted roll for the perfect bite - served with a
+						classic bag of chips on the side.</p>
+				</div>
+			</div>
+			<div class="overlap" onclick="selectMeal('saturday-lunch', 'veggie-sub')">
+				<img src="Assets\sub-veggie.png" alt="Veggie Sub" />
+				<div class="text-wrapper">
+					<h4>Veggie Sub</h4>
+					<p>Crisp lettuce, juicy tomatoes, crunchy cucumbers, and melty cheese stacked high on a warm,
+						toasted roll - served with a classic bag of chips on the side.</p>
+				</div>
+			</div>
+			<div class="overlap" onclick="selectMeal('saturday-lunch', 'chicken-sandwich')">
+				<img src="Assets\chicken-sandwich.png" alt="Crispy Chicken Sandwich" />
+				<div class="text-wrapper">
+					<h4>Crispy Chicken Sandwich</h4>
+					<p>Crispy fried chicken, fresh lettuce, and creamy mayo on a soft, toasted bun—served with a bag of
+						crunchy chips on the side.</p>
+				</div>
+			</div>
+		</div>
+		<h3>PIZZA:</h3>
+		<div class="grid-container">
+			<div class="overlap" onclick="selectMeal('saturday-lunch', 'pizza-cheese')">
+				<img src="Assets\pizza-cheese.png" alt="Cheese Pizza" />
+				<div class="text-wrapper">
+					<h4>Cheese Pizza</h4>
+					<p>Classic mozzarella, tangy tomato sauce, and a perfectly crisp crust.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('saturday-lunch', 'pizza-chicken')">
+				<img src="Assets\pizza-chicken.png" alt="Chicken Pizza" />
+				<div class="text-wrapper">
+					<h4>Chicken Pizza</h4>
+					<p>Smoky BBQ chicken, gooey mozzarella, and sweet, tangy BBQ sauce on a golden, crispy crust.</p>
+				</div>
+			</div>
+			<div class="overlap" onclick="selectMeal('saturday-lunch', 'pizza-pepperoni')">
+				<img src="Assets\pizza-pepperoni.png" alt="Pepperoni Pizza" />
+				<div class="text-wrapper">
+					<h4>Pepperoni Pizza</h4>
+					<p>Zesty pepperoni, melty mozzarella, and rich tomato sauce on a golden, crispy crust.</p>
+				</div>
+			</div>
+		</div>
+		<button class="none-button" type="button">I'll be purchasing my own meals on-site, thanks!</button>
+		<button class="next-button" type="button" onclick="goToPage('page-menu-saturday-dinner')">Next</button>
+	</div>
+	<div id="page-menu-saturday-dinner" class="page">
+		<h1 id="saturday-header">SATURDAY:</h1>
+		<h2>Dinner</h2>
+		<p>Please select your dinner option below.</p>
+		<h3>PLATES:</h3>
+		<div class="grid-container">
+			<div class="overlap" onclick="selectMeal('saturday-dinner', 'chinese-chow')">
+				<img src="Assets\chinese-chow.png" alt="Chinese Combo w/ Lo Mein" />
+				<div class="text-wrapper">
+					<h4>Chinese Combo w/ Lo Mein</h4>
+					<p>Savory stir-fried noodles paired with flavorful Chinese-style entrées.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('saturday-dinner', 'chinese-rice')">
+				<img src="Assets\chinese-rice.png" alt="Chinese Combo w/ Fried Rice" />
+				<div class="text-wrapper">
+					<h4>Chinese Combo w/ Fried Rice</h4>
+					<p>Fluffy, seasoned fried rice served alongside flavorful Chinese-style entrées.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('saturday-dinner', 'american')">
+				<img src="Assets\american.png" alt="American Classic" />
+				<div class="text-wrapper">
+					<h4>American Classic</h4>
+					<p>Spicy, saucy boneless chicken paired with creamy mac and cheese, smooth mashed potatoes, and rich
+						gravy.</p>
+				</div>
+			</div>
+			<div class="overlap" onclick="selectMeal('saturday-dinner', 'caribbean')">
+				<img src="Assets\caribbean.png" alt="Caribbean Chicken N' Rice" />
+				<div class="text-wrapper">
+					<h4>Caribbean Chicken N' Rice</h4>
+					<p>Grilled chicken with seasoned rice, served with a Caribbean cabbage mix, beans, and a rich dark
+						sauce drizzle.</p>
+				</div>
+			</div>
+		</div>
+		<h3>NIGERIAN:</h3>
+		<div class="grid-container">
+			<div class="overlap" onclick="selectMeal('saturday-dinner', 'nigerian-chicken')">
+				<img src="Assets\nigerian.png" alt="Nigerian Combo: Jollof Rice w/ Chicken" />
+				<div class="text-wrapper">
+					<h4>Nigerian Combo: Jollof Rice w/ Chicken</h4>
+					<p>Flavor-packed jollof rice served with tender, seasoned chicken and crispy, caramelized fried
+						sweet plantains.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('saturday-dinner', 'nigerian-turkey')">
+				<img src="Assets\nigerian.png" alt="Nigerian Combo: Jollof Rice w/ Turkey" />
+				<div class="text-wrapper">
+					<h4>Nigerian Combo: Jollof Rice w/ Turkey</h4>
+					<p>Flavor-packed jollof rice served with tender, seasoned turkey and crispy, caramelized fried sweet
+						plantains.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+		</div>
+		<h3>PIZZA:</h3>
+		<div class="grid-container">
+			<div class="overlap" onclick="selectMeal('saturday-dinner', 'pizza-cheese')">
+				<img src="Assets\pizza-cheese.png" alt="Cheese Pizza" />
+				<div class="text-wrapper">
+					<h4>Cheese Pizza</h4>
+					<p>Classic mozzarella, tangy tomato sauce, and a perfectly crisp crust.</p>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+			<div class="overlap" onclick="selectMeal('saturday-dinner', 'pizza-chicken')">
+				<img src="Assets\pizza-chicken.png" alt="Chicken Pizza" />
+				<div class="text-wrapper">
+					<h4>Chicken Pizza</h4>
+					<p>Smoky BBQ chicken, gooey mozzarella, and sweet, tangy BBQ sauce on a golden, crispy crust.</p>
+				</div>
+			</div>
+			<div class="overlap" onclick="selectMeal('saturday-dinner', 'pizza-pepperoni')">
+				<img src="Assets\pizza-pepperoni.png" alt="Pepperoni Pizza" />
+				<div class="text-wrapper">
+					<h4>Pepperoni Pizza</h4>
+					<p>Zesty pepperoni, melty mozzarella, and rich tomato sauce on a golden, crispy crust.</p>
+				</div>
+			</div>
+		</div>
+		<button class="none-button" type="button" onclick="selectMeal('saturday-dinner', 'none')">I'll be purchasing my
+			own meals on-site, thanks!</button>
+		<button class="next-button" type="button" onclick="goToPage('page-review')">Next</button>
+	</div>
+
+	<!-- Review Page -->
+	<div id="page-review" class="page">
+		<h1>Review Your Selections</h1>
+		<p>Please review your meal selections below. Click on any meal to change it. If everything looks good, click "Submit" to finalize your choices.
+		</p>
+		<h4>THURSDAY DINNER:</h4>
+		<div id="review-thursday-dinner" onclick="goToPage('page-menu-thursday-dinner')"></div>
+		<h4>FRIDAY LUNCH:</h4>
+		<div id="review-friday-lunch" onclick="goToPage('page-menu-friday-lunch')"></div>
+		<h4>FRIDAY DINNER:</h4>
+		<div id="review-friday-dinner" onclick="goToPage('page-menu-friday-dinner')"></div>
+		<h4>SATURDAY LUNCH:</h4>
+		<div id="review-saturday-lunch" onclick="goToPage('page-menu-saturday-lunch')"></div>
+		<h4>SATURDAY DINNER:</h4>
+		<div id="review-saturday-dinner" onclick="goToPage('page-menu-saturday-dinner')"></div>
+		<button class="submit-button" type="button" onclick="submitForm()">Submit</button>
 	</div>
 
 	<!-- Confirmation Page -->
 	<div id="page-confirmation" class="page">
 		<h1>Thank You!</h1>
-		<p>Your selections have been recorded.</p>
+		<p>Your selections have been recorded. You can return to this page any time to make changes.</p>
 	</div>
 </body>
 
