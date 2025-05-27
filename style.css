@@ -117,6 +117,7 @@ textarea {
 	align-items: center;
 	justify-items: center;
 	margin-bottom: 5rem;
+	margin-top: 2rem;
 }
 
 .overlap {
@@ -156,12 +157,15 @@ textarea {
 	display: block;
 	margin: 0 auto;
 	/* Center horizontally */
+	margin-top: 1rem;
 	margin-bottom: 3rem;
 }
 
 .overlap .text-wrapper {
 	box-sizing: border-box;
 	text-align: center;
+	margin-left: .5rem;
+	margin-right: .5rem;
 }
 
 .overlap .text-wrapper h4 {
