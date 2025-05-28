@@ -3,7 +3,7 @@
 body {
 	font-family: "Inter", sans-serif;
 	padding: 2rem;
-	background-image: url('Assets/background.jpeg');
+	background-image: url('Assets/background-1.png');
 	/* Update with your image path */
 	background-size: cover;
 	/* Cover the whole screen */
@@ -58,7 +58,7 @@ h4 {
 p {
 	font-family: "Inter", sans-serif;
 	font-weight: 400;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	margin-top: .5rem;
 	margin-bottom: .5rem;
 }
@@ -92,6 +92,7 @@ textarea {
 	border-color: #444;
 	border-radius: 0.5rem;
 	border: 1px solid #444;
+	text-transform: uppercase;
 }
 
 /* Hidden Styles */
@@ -106,7 +107,7 @@ textarea {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	/* 4 columns, adjust as needed */
-	gap: 3rem;
+	gap: 2rem;
 	/* space between grid items */
 	align-items: center;
 	justify-items: center;
@@ -115,8 +116,8 @@ textarea {
 }
 
 .overlap {
-	width: 300px;
-	height: 450px;
+	max-width: 300px;
+	height: 400px;
 	border: 2px solid;
 	border-color: #8282824c;
 	border-radius: 1rem;
@@ -134,11 +135,6 @@ textarea {
 	/* Optional: add some padding */
 }
 
-.description {
-	color: grey;
-	font-size: 1rem;
-}
-
 .button-row {
 	display: flex;
 	gap: 1rem;
@@ -153,7 +149,7 @@ textarea {
 	margin: 0 auto;
 	/* Center horizontally */
 	margin-top: 1rem;
-	margin-bottom: 3rem;
+	margin-bottom: 1rem;
 }
 
 .overlap .text-wrapper {
@@ -168,7 +164,8 @@ textarea {
 }
 
 .overlap .text-wrapper p {
-	font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+	font-size: clamp(0.5rem, 1.5vw, .9rem);
+	color: gray;
 }
 
 /* Page Specific Styles */
@@ -250,20 +247,20 @@ a {
 	color: #90caf9;
 }
 
-.review-row {
+.reviews {
 	display: flex;
-	align-items: center;
+	flex-direction: column;
 	gap: 1.5rem;
 	margin-bottom: 1.2rem;
 }
 
-.review-row h4 {
+.review-column h4 {
 	margin: 0;
 	min-width: 180px;
 	/* Adjust as needed */
 	font-size: 1.2rem;
 }
 
-.review-row>div {
+.review-column>div {
 	flex: 1;
 }
