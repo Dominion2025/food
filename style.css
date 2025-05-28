@@ -12,6 +12,7 @@ body {
 	background-position: center;
 	/* Center the image */
 	background-color: #181a1b;
+	background-attachment: fixed;
 	color: #f1f1f1;
 }
 
