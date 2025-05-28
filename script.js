@@ -170,6 +170,12 @@ async function submitCode() {
 	// Simulated server response for demo purposes
 	const encodedUrl = encodeURIComponent("https://docs.google.com/spreadsheets/d/e/2PACX-1vT51-1ICfq3wcyyGniGbfYEymxOKJLFqCx6cz_EttxtzFEdGHyh5NcPCwVy8lFPFQ_MtGAbd11FER_s/pubhtml#");
 	const response = await fetch(`https://us-central1-food-e9814.cloudfunctions.net/fetchHtml?url=${encodedUrl}`);
+	/* try {
+		response = await fetch(`https://us-central1-food-e9814.cloudfunctions.net/fetchHtml?url=${encodedUrl}`);
+	} catch (error) {
+		goToPage('page-error-unknown');
+		return;
+	} */
 	const registrationsHTML = await response.text();
 	const parser = new DOMParser();
 	const doc = parser.parseFromString(registrationsHTML, "text/html");

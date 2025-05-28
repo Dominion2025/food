@@ -19,7 +19,7 @@
 	<!-- Confirmation Code Page -->
 	<div id="page-code" class="page active">
 		<h1>Enter Your Confirmation Code</h1>
-		<textarea id="confirmation-code" rows="1" placeholder="" style="text-transform:uppercase"></textarea>
+		<textarea id="confirmation-code" rows="1" placeholder=" " title="Enter your confirmation code"></textarea>
 		<button onclick="submitCode()">Submit</button>
 	</div>
 
@@ -27,6 +27,12 @@
 	<div id="page-loading" class="page">
 		<h1>Loading...</h1>
 		<p>Please wait while we process your request.</p>
+	</div>
+
+
+	<div id="page-error-unknown" class="page">
+		<h1>Unknown Error</h1>
+		<p>We encountered an unknown error. Please refresh the page and try again.</p>
 	</div>
 
 	<!-- Error Page -->
@@ -159,7 +165,8 @@
 				<img src="Assets\nigerian-turkey.png" alt="Jollof Rice w/ Turkey" />
 				<div class="text-wrapper">
 					<h4>Jollof Rice w/ Turkey</h4>
-					<p class="description">Flavor-packed jollof rice served with tender, seasoned chopped turkey and crispy,
+					<p class="description">Flavor-packed jollof rice served with tender, seasoned chopped turkey and
+						crispy,
 						caramelized fried sweet
 						plantains.</p>
 				</div>
@@ -362,7 +369,8 @@
 				<img src="Assets\nigerian-turkey.png" alt="Jollof Rice w/ Turkey" />
 				<div class="text-wrapper">
 					<h4>Jollof Rice w/ Turkey</h4>
-					<p class="description">Flavor-packed jollof rice served with tender, seasoned chopped turkey and crispy,
+					<p class="description">Flavor-packed jollof rice served with tender, seasoned chopped turkey and
+						crispy,
 						caramelized fried sweet
 						plantains.</p>
 				</div>
@@ -563,7 +571,8 @@
 				<img src="Assets\nigerian-turkey.png" alt="Jollof Rice w/ Turkey" />
 				<div class="text-wrapper">
 					<h4>Jollof Rice w/ Turkey</h4>
-					<p class="description">Flavor-packed jollof rice served with tender, seasoned chopped turkey and crispy,
+					<p class="description">Flavor-packed jollof rice served with tender, seasoned chopped turkey and
+						crispy,
 						caramelized fried sweet
 						plantains.</p>
 				</div>
@@ -609,29 +618,31 @@
 		<h1>Review Your Selections</h1>
 		<p>Please review your meal selections below. Click on any meal to change it. If everything looks good, click
 			"Submit" to finalize your choices.</p>
-		<div class="review-row">
-			<h4>THURSDAY LUNCH:</h4>
-			<div id="review-thursday-lunch" onclick="goToPage('page-menu-thursday-lunch')"></div>
-		</div>
-		<div class="review-row">
-			<h4>THURSDAY DINNER:</h4>
-			<div id="review-thursday-dinner" onclick="goToPage('page-menu-thursday-dinner')"></div>
-		</div>
-		<div class="review-row">
-			<h4>FRIDAY LUNCH:</h4>
-			<div id="review-friday-lunch" onclick="goToPage('page-menu-friday-lunch')"></div>
-		</div>
-		<div class="review-row">
-			<h4>FRIDAY DINNER:</h4>
-			<div id="review-friday-dinner" onclick="goToPage('page-menu-friday-dinner')"></div>
-		</div>
-		<div class="review-row">
-			<h4>SATURDAY LUNCH:</h4>
-			<div id="review-saturday-lunch" onclick="goToPage('page-menu-saturday-lunch')"></div>
-		</div>
-		<div class="review-row">
-			<h4>SATURDAY DINNER:</h4>
-			<div id="review-saturday-dinner" onclick="goToPage('page-menu-saturday-dinner')"></div>
+		<div class="reviews">
+			<div class="review-column">
+				<h4>THURSDAY LUNCH:</h4>
+				<div id="review-thursday-lunch" onclick="goToPage('page-menu-thursday-lunch')"></div>
+			</div>
+			<div class="review-column">
+				<h4>THURSDAY DINNER:</h4>
+				<div id="review-thursday-dinner" onclick="goToPage('page-menu-thursday-dinner')"></div>
+			</div>
+			<div class="review-column">
+				<h4>FRIDAY LUNCH:</h4>
+				<div id="review-friday-lunch" onclick="goToPage('page-menu-friday-lunch')"></div>
+			</div>
+			<div class="review-column">
+				<h4>FRIDAY DINNER:</h4>
+				<div id="review-friday-dinner" onclick="goToPage('page-menu-friday-dinner')"></div>
+			</div>
+			<div class="review-column">
+				<h4>SATURDAY LUNCH:</h4>
+				<div id="review-saturday-lunch" onclick="goToPage('page-menu-saturday-lunch')"></div>
+			</div>
+			<div class="review-column">
+				<h4>SATURDAY DINNER:</h4>
+				<div id="review-saturday-dinner" onclick="goToPage('page-menu-saturday-dinner')"></div>
+			</div>
 		</div>
 		<button class="submit-button" type="button" onclick="submitForm()">Submit</button>
 	</div>
