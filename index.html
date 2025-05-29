@@ -52,22 +52,22 @@
 	<!-- Welcome Page -->
 	<div id="page-welcome" class="page">
 		<h3>Welcome to the Dominion Dining Portal!</h3>
-		<p>Hello <span id="user-name"></span>!<br>As a valued conference participant,
+		<h5>Hello <span id="user-name"></span>!<br><br>As a valued conference participant,
 			you're eligible for complimentary meals during the event.<br>Please click next to select your preferred meal
-			options — we're excited to serve you!</p>
+			options — we're excited to serve you!</h5>
 		<button onclick="goToPage('page-menu-thursday-lunch')">Next</button>
 	</div>
 
 	<!-- Duplicate Code Page -->
 	<div id="page-duplicate" class="page">
 		<h1>Code Already Used</h1>
-		<p>
+		<h5>
 			This code has already been used. You can continue,<br>but any changes made will overwrite your previous
-			selection.
-		</p>
+			selections.
+		</h5>
 		<div class="button-row">
 			<button onclick="goToPage('page-code')">Return</button>
-			<button onclick="goToPage('page-menu-thursday-lunch')">Continue Anyway</button>
+			<button onclick="goToPage('page-review')">Continue Anyway</button>
 		</div>
 	</div>
 
@@ -648,7 +648,7 @@
 		<!-- Review Page -->
 		<div id="page-review" class="page">
 			<h1>Review Your Selections</h1>
-			<p>Please review your meal selections below. Click on any meal to change it. If everything looks good, click
+			<p>Please review your meal selections below.<br>Click on any meal to change it.<br>If everything looks good, click
 				"Submit" to finalize your choices.</p>
 			<div class="reviews">
 				<div class="review-column">
