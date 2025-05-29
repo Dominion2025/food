@@ -188,6 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 async function submitCode() {
+	document.getElementById('confirmation-code').value = document.getElementById('confirmation-code').value.toUpperCase();
 	const code = document.getElementById('confirmation-code').value.trim();
 
 	if (!code) return alert("Please enter a code.");
@@ -208,12 +209,20 @@ async function submitCode() {
 		for (let j = 0; j < region.length; j++) {
 			const entry = region[j];
 			const values = entry.querySelectorAll("td");
-			if (values[1].innerHTML.toUpperCase() == code) {
+			if (values[1].innerHTML == code) {
 				if (values[9].innerHTML == "35-44" || values[9].innerHTML == "45-Above" || values[9].innerHTML == "3-6") {
 					validation = "ineligible";
 				} else {
-					if (await getUserData(code)) {
+					const data = await getUserData(code);
+					// If the user data exists, it means the code has been used
+					if (data) {
 						validation = "used";
+						mealChoices['thursday-lunch'] = data.thursdayLunch || "none";
+						mealChoices['thursday-dinner'] = data.thursdayDinner || "none";
+						mealChoices['friday-lunch'] = data.fridayLunch || "none";
+						mealChoices['friday-dinner'] = data.fridayDinner || "none";
+						mealChoices['saturday-lunch'] = data.saturdayLunch || "none";
+						mealChoices['saturday-dinner'] = data.saturdayDinner || "none";
 					} else {
 						validation = "valid";
 						const nameSpan = document.getElementById('user-name');

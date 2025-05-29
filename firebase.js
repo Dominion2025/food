@@ -45,7 +45,7 @@ export async function getUserData(userId) {
 
     // Check if the snapshot exists and return true if the user data is found
     if (snapshot.exists()) {
-      return true;
+      return snapshot.val();  // Return the user data if it exists
     } else {
       return false;  // Return false if no data exists for that user
     }
