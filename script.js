@@ -97,6 +97,8 @@ let mealMetadata = {
 	}
 }
 
+let reviewMode = false;
+
 function populateReviewPage() {
 	const days = [
 		{ key: 'thursday-lunch', id: 'review-thursday-lunch' },
@@ -135,6 +137,7 @@ function goToPage(pageId) {
 	window.scrollTo({ top: 0, behavior: 'smooth' });
 	if (pageId === 'page-review') {
 		populateReviewPage();
+		reviewMode = true;
 	}
 }
 window.goToPage = goToPage;
@@ -142,6 +145,10 @@ window.goToPage = goToPage;
 function goToMenuPage(currentDay, nextDay) {
 	if (mealChoices[currentDay] === "") {
 		alert("Please select a meal.");
+		return;
+	}
+	if (reviewMode) {
+		goToPage('page-review');
 		return;
 	}
 	goToPage(nextDay);

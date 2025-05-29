@@ -29,7 +29,7 @@ button {
 	padding: 0.5rem 1rem;
 	cursor: pointer;
 	transition: background-color 0.3s, transform 0.2s;
-	width: 15rem;
+	width: 20rem;
 }
 
 .none-button {
@@ -39,8 +39,8 @@ button {
 	box-sizing: border-box;
 	background-color: white;
 	color: black;
-	size:1.5rem;
-	width: 75%;
+	font-size: 1.3rem;
+	width: 100%;
 }
 
 .none-button:hover {
@@ -185,7 +185,6 @@ textarea {
 	display: flex;
 	gap: 1rem;
 	justify-content: center;
-	margin-top: 1.5rem;
 }
 
 .overlap img {

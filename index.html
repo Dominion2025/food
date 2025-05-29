@@ -66,8 +66,8 @@
 			selection.
 		</p>
 		<div class="button-row">
-			<button onclick="goToPage('page-menu-thursday-lunch')">Continue Anyway</button>
 			<button onclick="goToPage('page-code')">Return</button>
+			<button onclick="goToPage('page-menu-thursday-lunch')">Continue Anyway</button>
 		</div>
 	</div>
 
@@ -111,10 +111,12 @@
 				<div class="rectangle"></div>
 			</div>
 		</div>
-		<button class="none-button" type="button" onclick="selectMeal('thursday-lunch', 'none')">I'll be purchasing my
-			own meals on-site, thanks!</button>
-		<button class="next-button" type="button"
-			onclick="goToMenuPage('thursday-lunch', 'page-menu-thursday-dinner')">Next</button>
+		<button class="none-button" type="button" onclick="selectMeal('thursday-lunch', 'none')">No thanks, I'll buy my
+			own meals</button>
+		<div class="button-row">
+			<button class="next-button" type="button"
+				onclick="goToMenuPage('thursday-lunch', 'page-menu-thursday-dinner')">Next</button>
+		</div>
 	</div>
 	<div id="page-menu-thursday-dinner" class="page">
 		<h1 id="thursday-header">THURSDAY: Dinner</h1>
@@ -210,10 +212,13 @@
 				<div class="rectangle"></div>
 			</div>
 		</div>
-		<button class="none-button" type="button" onclick="selectMeal('thursday-dinner', 'none')">I'll be purchasing my
-			own meals on-site, thanks!</button>
-		<button class="next-button" type="button"
-			onclick="goToMenuPage('thursday-dinner', 'page-menu-friday-lunch')">Next</button>
+		<button class="none-button" type="button" onclick="selectMeal('thursday-dinner', 'none')">No thanks, I'll buy my
+			own meals</button>
+		<div class="button-row">
+			<button class="back-button" type="button" onclick="goToPage('page-menu-thursday-lunch')">Back</button>
+			<button class="next-button" type="button"
+				onclick="goToMenuPage('thursday-dinner', 'page-menu-friday-lunch')">Next</button>
+		</div>
 	</div>
 	<div id="page-menu-friday-lunch" class="page">
 		<h1 id="friday-header">FRIDAY: Lunch</h1>
@@ -317,10 +322,13 @@
 				<div class="rectangle"></div>
 			</div>
 		</div>
-		<button class="none-button" type="button" onclick="selectMeal('friday-lunch', 'none')">I'll be purchasing my own
-			meals on-site, thanks!</button>
-		<button class="next-button" type="button"
-			onclick="goToMenuPage('friday-lunch', 'page-menu-friday-dinner')">Next</button>
+		<button class="none-button" type="button" onclick="selectMeal('friday-lunch', 'none')">No thanks, I'll buy my
+			own meals</button>
+		<div class="button-row">
+			<button class="back-button" type="button" onclick="goToPage('page-menu-thursday-dinner')">Back</button>
+			<button class="next-button" type="button"
+				onclick="goToMenuPage('friday-lunch', 'page-menu-friday-dinner')">Next</button>
+		</div>
 	</div>
 	<div id="page-menu-friday-dinner" class="page">
 		<h1 id="friday-header">FRIDAY: Dinner</h1>
@@ -416,10 +424,13 @@
 				<div class="rectangle"></div>
 			</div>
 		</div>
-		<button class="none-button" type="button" onclick="selectMeal('friday-dinner', 'none')">I'll be purchasing my
-			own meals on-site, thanks!</button>
-		<button class="next-button" type="button"
-			onclick="goToMenuPage('friday-dinner', 'page-menu-saturday-lunch')">Next</button>
+		<button class="none-button" type="button" onclick="selectMeal('friday-dinner', 'none')">No thanks, I'll buy my
+			own meals</button>
+		<div class="button-row">
+			<button class="back-button" type="button" onclick="goToPage('page-menu-friday-lunch')">Back</button>
+			<button class="next-button" type="button"
+				onclick="goToMenuPage('friday-dinner', 'page-menu-saturday-lunch')">Next</button>
+		</div>
 	</div>
 	<div id="page-menu-saturday-lunch" class="page">
 		<h1 id="saturday-header">SATURDAY: Lunch</h1>
@@ -523,10 +534,13 @@
 				<div class="rectangle"></div>
 			</div>
 		</div>
-		<button class="none-button" type="button" onclick="selectMeal('saturday-lunch', 'none')">I'll be purchasing my
-			own meals on-site, thanks!</button>
-		<button class="next-button" type="button"
-			onclick="goToMenuPage('saturday-lunch', 'page-menu-saturday-dinner')">Next</button>
+		<button class="none-button" type="button" onclick="selectMeal('saturday-lunch', 'none')">No thanks, I'll buy my
+			own meals</button>
+		<div class="button-row">
+			<button class="back-button" type="button" onclick="goToPage('page-menu-friday-dinner')">Back</button>
+			<button class="next-button" type="button"
+				onclick="goToMenuPage('saturday-lunch', 'page-menu-saturday-dinner')">Next</button>
+		</div>
 	</div>
 	<div id="page-menu-saturday-dinner" class="page">
 		<h1 id="saturday-header">SATURDAY: Dinner</h1>
@@ -622,50 +636,54 @@
 				<div class="rectangle"></div>
 			</div>
 		</div>
-		<button class="none-button" type="button" onclick="selectMeal('saturday-dinner', 'none')">I'll be purchasing my
-			own meals on-site, thanks!</button>
-		<button class="next-button" type="button" onclick="goToMenuPage('saturday-dinner', 'page-review')">Next</button>
-	</div>
-
-	<!-- Review Page -->
-	<div id="page-review" class="page">
-		<h1>Review Your Selections</h1>
-		<p>Please review your meal selections below. Click on any meal to change it. If everything looks good, click
-			"Submit" to finalize your choices.</p>
-		<div class="reviews">
-			<div class="review-column">
-				<h4>THURSDAY LUNCH:</h4>
-				<div id="review-thursday-lunch" onclick="goToPage('page-menu-thursday-lunch')"></div>
-			</div>
-			<div class="review-column">
-				<h4>THURSDAY DINNER:</h4>
-				<div id="review-thursday-dinner" onclick="goToPage('page-menu-thursday-dinner')"></div>
-			</div>
-			<div class="review-column">
-				<h4>FRIDAY LUNCH:</h4>
-				<div id="review-friday-lunch" onclick="goToPage('page-menu-friday-lunch')"></div>
-			</div>
-			<div class="review-column">
-				<h4>FRIDAY DINNER:</h4>
-				<div id="review-friday-dinner" onclick="goToPage('page-menu-friday-dinner')"></div>
-			</div>
-			<div class="review-column">
-				<h4>SATURDAY LUNCH:</h4>
-				<div id="review-saturday-lunch" onclick="goToPage('page-menu-saturday-lunch')"></div>
-			</div>
-			<div class="review-column">
-				<h4>SATURDAY DINNER:</h4>
-				<div id="review-saturday-dinner" onclick="goToPage('page-menu-saturday-dinner')"></div>
-			</div>
+		<button class="none-button" type="button" onclick="selectMeal('saturday-dinner', 'none')">No thanks, I'll buy my
+			own meals</button>
+		<div class="button-row">
+			<button class="back-button" type="button" onclick="goToPage('page-menu-saturday-lunch')">Back</button>
+			<button class="next-button" type="button"
+				onclick="goToMenuPage('saturday-dinner', 'page-review')">Finalize</button>
 		</div>
-		<button class="submit-button" type="button" onclick="submitForm()">Submit</button>
-	</div>
+		</div>
 
-	<!-- Confirmation Page -->
-	<div id="page-confirmation" class="page">
-		<h1>Thank You!</h1>
-		<p>Your selections have been recorded. You can return to this page any time to make changes.</p>
-	</div>
+		<!-- Review Page -->
+		<div id="page-review" class="page">
+			<h1>Review Your Selections</h1>
+			<p>Please review your meal selections below. Click on any meal to change it. If everything looks good, click
+				"Submit" to finalize your choices.</p>
+			<div class="reviews">
+				<div class="review-column">
+					<h4>THURSDAY LUNCH:</h4>
+					<div id="review-thursday-lunch" onclick="goToPage('page-menu-thursday-lunch')"></div>
+				</div>
+				<div class="review-column">
+					<h4>FRIDAY LUNCH:</h4>
+					<div id="review-friday-lunch" onclick="goToPage('page-menu-friday-lunch')"></div>
+				</div>
+				<div class="review-column">
+					<h4>SATURDAY LUNCH:</h4>
+					<div id="review-saturday-lunch" onclick="goToPage('page-menu-saturday-lunch')"></div>
+				</div>
+				<div class="review-column">
+					<h4>THURSDAY DINNER:</h4>
+					<div id="review-thursday-dinner" onclick="goToPage('page-menu-thursday-dinner')"></div>
+				</div>
+				<div class="review-column">
+					<h4>FRIDAY DINNER:</h4>
+					<div id="review-friday-dinner" onclick="goToPage('page-menu-friday-dinner')"></div>
+				</div>
+				<div class="review-column">
+					<h4>SATURDAY DINNER:</h4>
+					<div id="review-saturday-dinner" onclick="goToPage('page-menu-saturday-dinner')"></div>
+				</div>
+			</div>
+			<button class="submit-button" type="button" onclick="submitForm()">Submit</button>
+		</div>
+
+		<!-- Confirmation Page -->
+		<div id="page-confirmation" class="page">
+			<h1>Thank You!</h1>
+			<p>Your selections have been recorded. You can return to this page any time to make changes.</p>
+		</div>
 </body>
 
 </html>
