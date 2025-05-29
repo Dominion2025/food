@@ -202,7 +202,7 @@ async function submitCode() {
 			const entry = region[j];
 			const values = entry.querySelectorAll("td");
 			if (values[1].innerHTML == code) {
-				if ((values[9].innerHTML == "35-44" || values[9].innerHTML == "45-Above")) {
+				if (values[9].innerHTML == "35-44" || values[9].innerHTML == "45-Above" || values[9].innerHTML == "3-6") {
 					validation = "ineligible";
 				} else {
 					if (await getUserData(code)) {
