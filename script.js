@@ -209,6 +209,12 @@ async function submitCode() {
 						validation = "used";
 					} else {
 						validation = "valid";
+						const userName = "Alex"; // Replace with your actual variable
+
+						const nameSpan = document.getElementById('user-name');
+						if (nameSpan) {
+							nameSpan.textContent = values[3].innerHTML;
+						}
 					}
 				}
 				break outerLoop;
@@ -223,7 +229,7 @@ async function submitCode() {
 	} else if (validation == "ineligible") {
 		goToPage('page-error-eligibility');
 	} else if (validation == "valid") {
-		goToPage('page-menu-thursday-lunch');
+		goToPage('page-welcome');
 	}
 }
 window.submitCode = submitCode;

@@ -49,6 +49,15 @@
 		<button onclick="goToPage('page-code')">Return</button>
 	</div>
 
+	<!-- Welcome Page -->
+	<div id="page-welcome" class="page">
+		<h3>Welcome to the Dominion Dining Portal!</h3>
+		<h4>Hello <span id="user-name"></span>!<br>As a valued conference participant,
+			you're eligible for complimentary meals during the event.<br>Please click next to select your preferred meal
+			options — we're excited to serve you!</h4>
+		<button onclick="goToPage('page-menu-thursday-lunch')">Next</button>
+	</div>
+
 	<!-- Duplicate Code Page -->
 	<div id="page-duplicate" class="page">
 		<h1>Code Already Used</h1>
@@ -104,7 +113,8 @@
 		</div>
 		<button class="none-button" type="button" onclick="selectMeal('thursday-lunch', 'none')">I'll be purchasing my
 			own meals on-site, thanks!</button>
-		<button class="next-button" type="button" onclick="goToMenuPage('thursday-lunch', 'page-menu-thursday-dinner')">Next</button>
+		<button class="next-button" type="button"
+			onclick="goToMenuPage('thursday-lunch', 'page-menu-thursday-dinner')">Next</button>
 	</div>
 	<div id="page-menu-thursday-dinner" class="page">
 		<h1 id="thursday-header">THURSDAY: Dinner</h1>
@@ -202,7 +212,8 @@
 		</div>
 		<button class="none-button" type="button" onclick="selectMeal('thursday-dinner', 'none')">I'll be purchasing my
 			own meals on-site, thanks!</button>
-		<button class="next-button" type="button" onclick="goToMenuPage('thursday-dinner', 'page-menu-friday-lunch')">Next</button>
+		<button class="next-button" type="button"
+			onclick="goToMenuPage('thursday-dinner', 'page-menu-friday-lunch')">Next</button>
 	</div>
 	<div id="page-menu-friday-lunch" class="page">
 		<h1 id="friday-header">FRIDAY: Lunch</h1>
@@ -308,7 +319,8 @@
 		</div>
 		<button class="none-button" type="button" onclick="selectMeal('friday-lunch', 'none')">I'll be purchasing my own
 			meals on-site, thanks!</button>
-		<button class="next-button" type="button" onclick="goToMenuPage('friday-lunch', 'page-menu-friday-dinner')">Next</button>
+		<button class="next-button" type="button"
+			onclick="goToMenuPage('friday-lunch', 'page-menu-friday-dinner')">Next</button>
 	</div>
 	<div id="page-menu-friday-dinner" class="page">
 		<h1 id="friday-header">FRIDAY: Dinner</h1>
@@ -406,7 +418,8 @@
 		</div>
 		<button class="none-button" type="button" onclick="selectMeal('friday-dinner', 'none')">I'll be purchasing my
 			own meals on-site, thanks!</button>
-		<button class="next-button" type="button" onclick="goToMenuPage('friday-dinner', 'page-menu-saturday-lunch')">Next</button>
+		<button class="next-button" type="button"
+			onclick="goToMenuPage('friday-dinner', 'page-menu-saturday-lunch')">Next</button>
 	</div>
 	<div id="page-menu-saturday-lunch" class="page">
 		<h1 id="saturday-header">SATURDAY: Lunch</h1>
@@ -512,7 +525,8 @@
 		</div>
 		<button class="none-button" type="button" onclick="selectMeal('saturday-lunch', 'none')">I'll be purchasing my
 			own meals on-site, thanks!</button>
-		<button class="next-button" type="button" onclick="goToMenuPage('saturday-lunch', 'page-menu-saturday-dinner')">Next</button>
+		<button class="next-button" type="button"
+			onclick="goToMenuPage('saturday-lunch', 'page-menu-saturday-dinner')">Next</button>
 	</div>
 	<div id="page-menu-saturday-dinner" class="page">
 		<h1 id="saturday-header">SATURDAY: Dinner</h1>
