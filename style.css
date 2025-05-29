@@ -39,6 +39,7 @@ button {
 	box-sizing: border-box;
 	background-color: white;
 	color: black;
+	size:1.5rem;
 	width: 75%;
 }
 
