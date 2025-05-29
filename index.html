@@ -102,11 +102,9 @@
 				<div class="rectangle"></div>
 			</div>
 		</div>
-		<label>
-			<input type="radio" name="meal-selection-thursday-lunch" value="none"
-				onclick="selectMeal('thursday-lunch', 'none')">I'll be purchasing my own meals on-site, thanks!
-		</label>
-		<button class="next-button" type="button" onclick="goToPage('page-menu-thursday-dinner')">Next</button>
+		<button class="none-button" type="button" onclick="selectMeal('thursday-lunch', 'none')">I'll be purchasing my
+			own meals on-site, thanks!</button>
+		<button class="next-button" type="button" onclick="goToMenuPage('thursday-lunch', 'page-menu-thursday-dinner')">Next</button>
 	</div>
 	<div id="page-menu-thursday-dinner" class="page">
 		<h1 id="thursday-header">THURSDAY: Dinner</h1>
@@ -204,7 +202,7 @@
 		</div>
 		<button class="none-button" type="button" onclick="selectMeal('thursday-dinner', 'none')">I'll be purchasing my
 			own meals on-site, thanks!</button>
-		<button class="next-button" type="button" onclick="goToPage('page-menu-friday-lunch')">Next</button>
+		<button class="next-button" type="button" onclick="goToMenuPage('thursday-dinner', 'page-menu-friday-lunch')">Next</button>
 	</div>
 	<div id="page-menu-friday-lunch" class="page">
 		<h1 id="friday-header">FRIDAY: Lunch</h1>
@@ -310,7 +308,7 @@
 		</div>
 		<button class="none-button" type="button" onclick="selectMeal('friday-lunch', 'none')">I'll be purchasing my own
 			meals on-site, thanks!</button>
-		<button class="next-button" type="button" onclick="goToPage('page-menu-friday-dinner')">Next</button>
+		<button class="next-button" type="button" onclick="goToMenuPage('friday-lunch', 'page-menu-friday-dinner')">Next</button>
 	</div>
 	<div id="page-menu-friday-dinner" class="page">
 		<h1 id="friday-header">FRIDAY: Dinner</h1>
@@ -406,8 +404,9 @@
 				<div class="rectangle"></div>
 			</div>
 		</div>
-		<button class="none-button" type="button">I'll be purchasing my own meals on-site, thanks!</button>
-		<button class="next-button" type="button" onclick="goToPage('page-menu-saturday-lunch')">Next</button>
+		<button class="none-button" type="button" onclick="selectMeal('friday-dinner', 'none')">I'll be purchasing my
+			own meals on-site, thanks!</button>
+		<button class="next-button" type="button" onclick="goToMenuPage('friday-dinner', 'page-menu-saturday-lunch')">Next</button>
 	</div>
 	<div id="page-menu-saturday-lunch" class="page">
 		<h1 id="saturday-header">SATURDAY: Lunch</h1>
@@ -511,8 +510,9 @@
 				<div class="rectangle"></div>
 			</div>
 		</div>
-		<button class="none-button" type="button">I'll be purchasing my own meals on-site, thanks!</button>
-		<button class="next-button" type="button" onclick="goToPage('page-menu-saturday-dinner')">Next</button>
+		<button class="none-button" type="button" onclick="selectMeal('saturday-lunch', 'none')">I'll be purchasing my
+			own meals on-site, thanks!</button>
+		<button class="next-button" type="button" onclick="goToMenuPage('saturday-lunch', 'page-menu-saturday-dinner')">Next</button>
 	</div>
 	<div id="page-menu-saturday-dinner" class="page">
 		<h1 id="saturday-header">SATURDAY: Dinner</h1>
@@ -610,7 +610,7 @@
 		</div>
 		<button class="none-button" type="button" onclick="selectMeal('saturday-dinner', 'none')">I'll be purchasing my
 			own meals on-site, thanks!</button>
-		<button class="next-button" type="button" onclick="goToPage('page-review')">Next</button>
+		<button class="next-button" type="button" onclick="goToMenuPage('saturday-dinner', 'page-review')">Next</button>
 	</div>
 
 	<!-- Review Page -->

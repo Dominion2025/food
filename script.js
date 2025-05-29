@@ -139,11 +139,30 @@ function goToPage(pageId) {
 }
 window.goToPage = goToPage;
 
+function goToMenuPage(currentDay, nextDay) {
+	if (mealChoices[currentDay] === "") {
+		alert("Please select a meal.");
+		return;
+	}
+	goToPage(nextDay);
+}
+window.goToMenuPage = goToMenuPage;
+
 document.addEventListener('DOMContentLoaded', function () {
 	document.querySelectorAll('.overlap').forEach(function (div) {
 		div.addEventListener('click', function () {
 			// Remove 'selected' from all siblings in the same grid
 			this.parentElement.parentElement.querySelectorAll('.overlap').forEach(d => d.classList.remove('selected'));
+			this.parentElement.parentElement.querySelectorAll('.none-button').forEach(d => d.classList.remove('selected'));
+			// Add 'selected' to the clicked one
+			this.classList.add('selected');
+		});
+	});
+
+	document.querySelectorAll('.none-button').forEach(function (div) {
+		div.addEventListener('click', function () {
+			// Remove 'selected' from all siblings in the same grid
+			this.parentElement.querySelectorAll('.overlap').forEach(d => d.classList.remove('selected'));
 			// Add 'selected' to the clicked one
 			this.classList.add('selected');
 		});
@@ -170,12 +189,6 @@ async function submitCode() {
 	// Simulated server response for demo purposes
 	const encodedUrl = encodeURIComponent("https://docs.google.com/spreadsheets/d/e/2PACX-1vT51-1ICfq3wcyyGniGbfYEymxOKJLFqCx6cz_EttxtzFEdGHyh5NcPCwVy8lFPFQ_MtGAbd11FER_s/pubhtml#");
 	const response = await fetch(`https://us-central1-food-e9814.cloudfunctions.net/fetchHtml?url=${encodedUrl}`);
-	/* try {
-		response = await fetch(`https://us-central1-food-e9814.cloudfunctions.net/fetchHtml?url=${encodedUrl}`);
-	} catch (error) {
-		goToPage('page-error-unknown');
-		return;
-	} */
 	const registrationsHTML = await response.text();
 	const parser = new DOMParser();
 	const doc = parser.parseFromString(registrationsHTML, "text/html");

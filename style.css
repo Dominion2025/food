@@ -25,11 +25,35 @@ button {
 	color: #f1f1f1;
 	border: none;
 	border-radius: 0.5rem;
+	margin-top: 3rem;
 	padding: 0.5rem 1rem;
 	cursor: pointer;
 	transition: background-color 0.3s, transform 0.2s;
-	margin-top: 10rem;
 	width: 15rem;
+}
+
+.none-button {
+	border: 2px solid;
+	border-color: #8282824c;
+	border-radius: 1rem;
+	box-sizing: border-box;
+	background-color: white;
+	color: black;
+	width: 75%;
+}
+
+.none-button:hover {
+	border-color: #1976d2;
+	/* Material blue */
+	border-width: 4px;
+	box-shadow: 0 0 10px #1976d233;
+	transition: border-color 0.2s, border-width 0.2s, box-shadow 0.2s;
+}
+
+.none-button.selected {
+	background: #e3f2fd;
+	/* Light blue, change as desired */
+	transition: background 0.2s;
 }
 
 h1 {
@@ -63,6 +87,15 @@ p {
 	margin-bottom: .5rem;
 }
 
+label {
+	font-family: "Inter", sans-serif;
+	font-weight: 700;
+	font-size: 1.2rem;
+	margin-top: .5rem;
+	margin-bottom: .5rem;
+	display: block;
+}
+
 /* Page Styles */
 
 .page {
@@ -85,6 +118,7 @@ textarea {
 	font-family: "Inter", sans-serif;
 	display: block;
 	margin: 1rem 0;
+	margin-bottom: 5rem;
 	padding: 0.5rem;
 	font-size: 1rem;
 	background-color: #23272a;
@@ -111,7 +145,6 @@ textarea {
 	/* space between grid items */
 	align-items: center;
 	justify-items: center;
-	margin-bottom: 5rem;
 	margin-top: 2rem;
 }
 
@@ -226,7 +259,7 @@ textarea {
 }
 
 #saturday-header {
-	background: linear-gradient(45deg, #00ff08, #0d4c07);
+	background: linear-gradient(45deg, #00ff08, #f2ff00);
 	/* blue to cyan, adjust as desired */
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
