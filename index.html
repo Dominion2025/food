@@ -53,8 +53,10 @@
 	<!-- Welcome Page -->
 	<div id="page-welcome" class="page">
 		<h3>Welcome to Dominion Dining Portal</h3>
-		<h5>Hello <span id="user-name"></span>!<br><br>We're excited to be serving you during your time at the 2025 International Youth Convention.<br>Click on that button below to dive into building deliciously crafted meals,<br>all included in your convention package. Thank you and God bless!
-</h5>
+		<h5>Hello <span id="user-name"></span>!<br><br>We're excited to be serving you during your time at the 2025
+			International Youth Convention.<br>Click on that button below to dive into building deliciously crafted
+			meals,<br>all included in your convention package. Thank you and God bless!
+		</h5>
 		<button onclick="goToPage('page-menu-thursday-lunch')">Next</button>
 	</div>
 
@@ -62,7 +64,8 @@
 	<div id="page-duplicate" class="page">
 		<h1>Code Already Used</h1>
 		<h5>
-			You have already selected your meal options. You can continue,<br>but any changes made will overwrite your previous
+			You have already selected your meal options. You can continue,<br>but any changes made will overwrite your
+			previous
 			selections.
 		</h5>
 		<div class="button-row">
@@ -121,31 +124,40 @@
 	<div id="page-menu-thursday-dinner" class="page">
 		<h1 id="thursday-header">THURSDAY: Dinner</h1>
 		<p>Please select your dinner option below.</p>
-		<h3>PLATES:</h3>
+		<h3>PLATES</h3>
 		<div class="grid-container">
 			<div class="overlap" onclick="selectMeal('thursday-dinner', 'chinese-chow')">
-				<img src="Assets\chinese-chow.png" alt="Chinese Combo w/ Lo Mein" />
+				<img src="Assets\chinese-chow.png" alt="Chinese Lo Mein" />
 				<div class="text-wrapper">
-					<h4>Chinese Combo w/ Lo Mein</h4>
+					<h4>Chinese Lo Mein</h4>
 					<p class="description">Savory stir-fried noodles paired with flavorful Chinese-style entrées.</p>
 				</div>
 				<div class="rectangle"></div>
 			</div>
 			<div class="overlap" onclick="selectMeal('thursday-dinner', 'chinese-rice')">
-				<img src="Assets\chinese-rice.png" alt="Chinese Combo w/ Fried Rice" />
+				<img src="Assets\chinese-rice.png" alt="Chinese Fried Rice" />
 				<div class="text-wrapper">
-					<h4>Chinese Combo w/ Fried Rice</h4>
+					<h4>Chinese Fried Rice</h4>
 					<p class="description">Fluffy, seasoned fried rice served alongside flavorful Chinese-style entrées.
 					</p>
 				</div>
 				<div class="rectangle"></div>
 			</div>
-			<div class="overlap" onclick="selectMeal('thursday-dinner', 'american')">
-				<img src="Assets\american.png" alt="American Classic" />
+			<div class="overlap" onclick="selectMeal('thursday-dinner', 'american-mac')">
+				<img src="Assets\american-mac.png" alt="American Classic w/ Mac N' Cheese" />
 				<div class="text-wrapper">
-					<h4>American Classic</h4>
+					<h4>American Classic w/ Mac N' Cheese</h4>
 					<p class="description">Spicy, saucy boneless chicken paired with creamy mac and cheese, smooth
 						mashed potatoes, and rich
+						gravy.</p>
+				</div>
+			</div>
+			<div class="overlap" onclick="selectMeal('thursday-dinner', 'american-corn')">
+				<img src="Assets\american-corn.png" alt="American Classic w/ Corn" />
+				<div class="text-wrapper">
+					<h4>American Classic w/ Corn</h4>
+					<p class="description">Spicy, saucy boneless chicken paired with sweet corn, smooth mashed potatoes,
+						and rich
 						gravy.</p>
 				</div>
 			</div>
@@ -153,9 +165,8 @@
 				<img src="Assets\caribbean.png" alt="Caribbean Chicken N' Rice" />
 				<div class="text-wrapper">
 					<h4>Caribbean Chicken N' Rice</h4>
-					<p class="description">Grilled chicken with seasoned rice, served with a Caribbean cabbage mix,
-						beans, and a rich dark
-						sauce drizzle.</p>
+					<p class="description">Grilled chicken with seasoned rice and beans, served with a Caribbean cabbage
+						mix.</p>
 				</div>
 			</div>
 			<div class="overlap" onclick="selectMeal('thursday-dinner', 'nigerian-chicken')">
@@ -169,7 +180,7 @@
 				<div class="rectangle"></div>
 			</div>
 		</div>
-		<h3>PIZZA:</h3>
+		<h3>PIZZA</h3>
 		<div class="grid-container">
 			<div class="overlap" onclick="selectMeal('thursday-dinner', 'pizza-cheese')">
 				<img src="Assets\pizza-cheese.png" alt="Cheese Pizza" />
@@ -209,7 +220,7 @@
 	<div id="page-menu-friday-lunch" class="page">
 		<h1 id="friday-header">FRIDAY: Lunch</h1>
 		<p>Please select your lunch option below.</p>
-		<h3>HANDHELDS:</h3>
+		<h3>HANDHELDS</h3>
 		<div class="grid-container">
 			<div class="overlap" onclick="selectMeal('friday-lunch', 'hot-dog')">
 				<img src="Assets\hot-dog.png" alt="All Beef Hot Dog" />
@@ -237,7 +248,7 @@
 				<div class="rectangle"></div>
 			</div>
 		</div>
-		<h3>SANDWICHES:</h3>
+		<h3>SANDWICHES</h3>
 		<div class="grid-container">
 			<div class="overlap" onclick="selectMeal('friday-lunch', 'turkey-sub')">
 				<img src="Assets\sub-turkey.png" alt="Turkey Sub" />
@@ -279,7 +290,7 @@
 				</div>
 			</div>
 		</div>
-		<h3>PIZZA:</h3>
+		<h3>PIZZA</h3>
 		<div class="grid-container">
 			<div class="overlap" onclick="selectMeal('friday-lunch', 'pizza-cheese')">
 				<img src="Assets\pizza-cheese.png" alt="Cheese Pizza" />
@@ -319,31 +330,40 @@
 	<div id="page-menu-friday-dinner" class="page">
 		<h1 id="friday-header">FRIDAY: Dinner</h1>
 		<p>Please select your dinner option below.</p>
-		<h3>PLATES:</h3>
+		<h3>PLATES</h3>
 		<div class="grid-container">
 			<div class="overlap" onclick="selectMeal('friday-dinner', 'chinese-chow')">
-				<img src="Assets\chinese-chow.png" alt="Chinese Combo w/ Lo Mein" />
+				<img src="Assets\chinese-chow.png" alt="Chinese Lo Mein" />
 				<div class="text-wrapper">
-					<h4>Chinese Combo w/ Lo Mein</h4>
+					<h4>Chinese Lo Mein</h4>
 					<p class="description">Savory stir-fried noodles paired with flavorful Chinese-style entrées.</p>
 				</div>
 				<div class="rectangle"></div>
 			</div>
 			<div class="overlap" onclick="selectMeal('friday-dinner', 'chinese-rice')">
-				<img src="Assets\chinese-rice.png" alt="Chinese Combo w/ Fried Rice" />
+				<img src="Assets\chinese-rice.png" alt="Chinese Fried Rice" />
 				<div class="text-wrapper">
-					<h4>Chinese Combo w/ Fried Rice</h4>
+					<h4>Chinese Fried Rice</h4>
 					<p class="description">Fluffy, seasoned fried rice served alongside flavorful Chinese-style entrées.
 					</p>
 				</div>
 				<div class="rectangle"></div>
 			</div>
-			<div class="overlap" onclick="selectMeal('friday-dinner', 'american')">
-				<img src="Assets\american.png" alt="American Classic" />
+			<div class="overlap" onclick="selectMeal('friday-dinner', 'american-mac')">
+				<img src="Assets\american-mac.png" alt="American Classic w/ Mac N' Cheese" />
 				<div class="text-wrapper">
-					<h4>American Classic</h4>
+					<h4>American Classic w/ Mac N' Cheese</h4>
 					<p class="description">Spicy, saucy boneless chicken paired with creamy mac and cheese, smooth
 						mashed potatoes, and rich
+						gravy.</p>
+				</div>
+			</div>
+			<div class="overlap" onclick="selectMeal('friday-dinner', 'american-corn')">
+				<img src="Assets\american-corn.png" alt="American Classic w/ Corn" />
+				<div class="text-wrapper">
+					<h4>American Classic w/ Corn</h4>
+					<p class="description">Spicy, saucy boneless chicken paired with sweet corn, smooth mashed potatoes,
+						and rich
 						gravy.</p>
 				</div>
 			</div>
@@ -351,9 +371,8 @@
 				<img src="Assets\caribbean.png" alt="Caribbean Chicken N' Rice" />
 				<div class="text-wrapper">
 					<h4>Caribbean Chicken N' Rice</h4>
-					<p class="description">Grilled chicken with seasoned rice, served with a Caribbean cabbage mix,
-						beans, and a rich dark
-						sauce drizzle.</p>
+					<p class="description">Grilled chicken with seasoned rice and beans, served with a Caribbean cabbage
+						mix.</p>
 				</div>
 			</div>
 			<div class="overlap" onclick="selectMeal('friday-dinner', 'nigerian-chicken')">
@@ -367,7 +386,7 @@
 				<div class="rectangle"></div>
 			</div>
 		</div>
-		<h3>PIZZA:</h3>
+		<h3>PIZZA</h3>
 		<div class="grid-container">
 			<div class="overlap" onclick="selectMeal('friday-dinner', 'pizza-cheese')">
 				<img src="Assets\pizza-cheese.png" alt="Cheese Pizza" />
@@ -407,7 +426,7 @@
 	<div id="page-menu-saturday-lunch" class="page">
 		<h1 id="saturday-header">SATURDAY: Lunch</h1>
 		<p>Please select your lunch option below.</p>
-		<h3>HANDHELDS:</h3>
+		<h3>HANDHELDS</h3>
 		<div class="grid-container">
 			<div class="overlap" onclick="selectMeal('saturday-lunch', 'hot-dog')">
 				<img src="Assets\hot-dog.png" alt="All Beef Hot Dog" />
@@ -435,7 +454,7 @@
 				<div class="rectangle"></div>
 			</div>
 		</div>
-		<h3>SANDWICHES:</h3>
+		<h3>SANDWICHES</h3>
 		<div class="grid-container">
 			<div class="overlap" onclick="selectMeal('saturday-lunch', 'turkey-sub')">
 				<img src="Assets\sub-turkey.png" alt="Turkey Sub" />
@@ -477,7 +496,7 @@
 				</div>
 			</div>
 		</div>
-		<h3>PIZZA:</h3>
+		<h3>PIZZA</h3>
 		<div class="grid-container">
 			<div class="overlap" onclick="selectMeal('saturday-lunch', 'pizza-cheese')">
 				<img src="Assets\pizza-cheese.png" alt="Cheese Pizza" />
@@ -517,31 +536,40 @@
 	<div id="page-menu-saturday-dinner" class="page">
 		<h1 id="saturday-header">SATURDAY: Dinner</h1>
 		<p>Please select your dinner option below.</p>
-		<h3>PLATES:</h3>
+		<h3>PLATES</h3>
 		<div class="grid-container">
 			<div class="overlap" onclick="selectMeal('saturday-dinner', 'chinese-chow')">
-				<img src="Assets\chinese-chow.png" alt="Chinese Combo w/ Lo Mein" />
+				<img src="Assets\chinese-chow.png" alt="Chinese Lo Mein" />
 				<div class="text-wrapper">
-					<h4>Chinese Combo w/ Lo Mein</h4>
+					<h4>Chinese Lo Mein</h4>
 					<p class="description">Savory stir-fried noodles paired with flavorful Chinese-style entrées.</p>
 				</div>
 				<div class="rectangle"></div>
 			</div>
 			<div class="overlap" onclick="selectMeal('saturday-dinner', 'chinese-rice')">
-				<img src="Assets\chinese-rice.png" alt="Chinese Combo w/ Fried Rice" />
+				<img src="Assets\chinese-rice.png" alt="Chinese Fried Rice" />
 				<div class="text-wrapper">
-					<h4>Chinese Combo w/ Fried Rice</h4>
+					<h4>Chinese Fried Rice</h4>
 					<p class="description">Fluffy, seasoned fried rice served alongside flavorful Chinese-style entrées.
 					</p>
 				</div>
 				<div class="rectangle"></div>
 			</div>
-			<div class="overlap" onclick="selectMeal('saturday-dinner', 'american')">
-				<img src="Assets\american.png" alt="American Classic" />
+			<div class="overlap" onclick="selectMeal('saturday-dinner', 'american-mac')">
+				<img src="Assets\american-mac.png" alt="American Classic w/ Mac N' Cheese" />
 				<div class="text-wrapper">
-					<h4>American Classic</h4>
+					<h4>American Classic w/ Mac N' Cheese</h4>
 					<p class="description">Spicy, saucy boneless chicken paired with creamy mac and cheese, smooth
 						mashed potatoes, and rich
+						gravy.</p>
+				</div>
+			</div>
+			<div class="overlap" onclick="selectMeal('saturday-dinner', 'american-corn')">
+				<img src="Assets\american-corn.png" alt="American Classic w/ Corn" />
+				<div class="text-wrapper">
+					<h4>American Classic w/ Corn</h4>
+					<p class="description">Spicy, saucy boneless chicken paired with sweet corn, smooth mashed potatoes,
+						and rich
 						gravy.</p>
 				</div>
 			</div>
@@ -549,9 +577,8 @@
 				<img src="Assets\caribbean.png" alt="Caribbean Chicken N' Rice" />
 				<div class="text-wrapper">
 					<h4>Caribbean Chicken N' Rice</h4>
-					<p class="description">Grilled chicken with seasoned rice, served with a Caribbean cabbage mix,
-						beans, and a rich dark
-						sauce drizzle.</p>
+					<p class="description">Grilled chicken with seasoned rice and beans, served with a Caribbean cabbage
+						mix.</p>
 				</div>
 			</div>
 			<div class="overlap" onclick="selectMeal('saturday-dinner', 'nigerian-chicken')">
@@ -565,7 +592,7 @@
 				<div class="rectangle"></div>
 			</div>
 		</div>
-		<h3>PIZZA:</h3>
+		<h3>PIZZA</h3>
 		<div class="grid-container">
 			<div class="overlap" onclick="selectMeal('saturday-dinner', 'pizza-cheese')">
 				<img src="Assets\pizza-cheese.png" alt="Cheese Pizza" />
@@ -601,47 +628,48 @@
 			<button class="next-button" type="button"
 				onclick="goToMenuPage('saturday-dinner', 'page-review')">Finalize</button>
 		</div>
-		</div>
+	</div>
 
-		<!-- Review Page -->
-		<div id="page-review" class="page">
-			<h1>Review Your Selections</h1>
-			<p>Please review your meal selections below.<br>Click on any meal to change it.<br>If everything looks good, click
-				"Submit" to finalize your choices.</p>
-			<div class="reviews">
-				<div class="review-column">
-					<h4>THURSDAY LUNCH:</h4>
-					<div id="review-thursday-lunch" onclick="goToPage('page-menu-thursday-lunch')"></div>
-				</div>
-				<div class="review-column">
-					<h4>FRIDAY LUNCH:</h4>
-					<div id="review-friday-lunch" onclick="goToPage('page-menu-friday-lunch')"></div>
-				</div>
-				<div class="review-column">
-					<h4>SATURDAY LUNCH:</h4>
-					<div id="review-saturday-lunch" onclick="goToPage('page-menu-saturday-lunch')"></div>
-				</div>
-				<div class="review-column">
-					<h4>THURSDAY DINNER:</h4>
-					<div id="review-thursday-dinner" onclick="goToPage('page-menu-thursday-dinner')"></div>
-				</div>
-				<div class="review-column">
-					<h4>FRIDAY DINNER:</h4>
-					<div id="review-friday-dinner" onclick="goToPage('page-menu-friday-dinner')"></div>
-				</div>
-				<div class="review-column">
-					<h4>SATURDAY DINNER:</h4>
-					<div id="review-saturday-dinner" onclick="goToPage('page-menu-saturday-dinner')"></div>
-				</div>
+	<!-- Review Page -->
+	<div id="page-review" class="page">
+		<h1>Review Your Selections</h1>
+		<p>Please review your meal selections below.<br>Click on any meal to change it.<br>If everything looks good,
+			click
+			"Submit" to finalize your choices.</p>
+		<div class="reviews">
+			<div class="review-column">
+				<h4>THURSDAY LUNCH:</h4>
+				<div id="review-thursday-lunch" onclick="goToPage('page-menu-thursday-lunch')"></div>
 			</div>
-			<button class="submit-button" type="button" onclick="submitForm()">Submit</button>
+			<div class="review-column">
+				<h4>FRIDAY LUNCH:</h4>
+				<div id="review-friday-lunch" onclick="goToPage('page-menu-friday-lunch')"></div>
+			</div>
+			<div class="review-column">
+				<h4>SATURDAY LUNCH:</h4>
+				<div id="review-saturday-lunch" onclick="goToPage('page-menu-saturday-lunch')"></div>
+			</div>
+			<div class="review-column">
+				<h4>THURSDAY DINNER:</h4>
+				<div id="review-thursday-dinner" onclick="goToPage('page-menu-thursday-dinner')"></div>
+			</div>
+			<div class="review-column">
+				<h4>FRIDAY DINNER:</h4>
+				<div id="review-friday-dinner" onclick="goToPage('page-menu-friday-dinner')"></div>
+			</div>
+			<div class="review-column">
+				<h4>SATURDAY DINNER:</h4>
+				<div id="review-saturday-dinner" onclick="goToPage('page-menu-saturday-dinner')"></div>
+			</div>
 		</div>
+		<button class="submit-button" type="button" onclick="submitForm()">Submit</button>
+	</div>
 
-		<!-- Confirmation Page -->
-		<div id="page-confirmation" class="page">
-			<h1>Thank You!</h1>
-			<p>Your selections have been recorded. You can return to this page any time to make changes.</p>
-		</div>
+	<!-- Confirmation Page -->
+	<div id="page-confirmation" class="page">
+		<h1>Thank You!</h1>
+		<p>Your selections have been recorded. You can return to this page any time to make changes.</p>
+	</div>
 </body>
 
 </html>

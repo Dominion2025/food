@@ -61,24 +61,29 @@ let mealMetadata = {
 		description: "Zesty pepperoni, melty mozzarella, and rich tomato sauce on a golden, crispy crust."
 	},
 	"chinese-chow": {
-		name: "Chinese Combo w/ Lo Mein",
+		name: "Chinese Lo Mein",
 		image: "Assets\\chinese-chow.png",
 		description: "Savory stir-fried noodles paired with flavorful Chinese-style entrées."
 	},
 	"chinese-rice": {
-		name: "Chinese Combo w/ Fried Rice",
+		name: "Chinese Fried Rice",
 		image: "Assets\\chinese-rice.png",
 		description: "Fluffy, seasoned fried rice served alongside flavorful Chinese-style entrées."
 	},
-	"american": {
-		name: "American Classic",
-		image: "Assets\\american.png",
+	"american-mac": {
+		name: "American Classic w/ Mac N' Cheese",
+		image: "Assets\\american-mac.png",
 		description: "Spicy, saucy boneless chicken paired with creamy mac and cheese, smooth mashed potatoes, and rich gravy."
+	},
+	"american-corn": {
+		name: "American Classic w/ Corn",
+		image: "Assets\\american-corn.png",
+		description: "Spicy, saucy boneless chicken paired with sweet corn, smooth mashed potatoes, and rich gravy."
 	},
 	"caribbean": {
 		name: "Caribbean Chicken N' Rice",
 		image: "Assets\\caribbean.png",
-		description: "Grilled chicken with seasoned rice, served with a Caribbean cabbage mix, beans, and a rich dark sauce drizzle."
+		description: "Grilled chicken with seasoned rice and beans, served with a Caribbean cabbage mix."
 	},
 	"nigerian-chicken": {
 		name: "Jollof Rice w/ Chicken",
