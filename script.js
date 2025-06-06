@@ -85,11 +85,6 @@ let mealMetadata = {
 		image: "Assets\\nigerian-chicken.png",
 		description: "Flavor-packed jollof rice served with tender, seasoned chicken and crispy, caramelized fried sweet plantains."
 	},
-	"nigerian-turkey": {
-		name: "Jollof Rice w/ Turkey",
-		image: "Assets\\nigerian-turkey.png",
-		description: "Flavor-packed jollof rice served with tender, seasoned chopped turkey and crispy, caramelized fried sweet plantains."
-	},
 	"none": {
 		name: "No Meal",
 		image: "Assets\\no-meal.png",
