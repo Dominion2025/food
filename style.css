@@ -149,7 +149,7 @@ textarea {
 
 .grid-container {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	/* 4 columns, adjust as needed */
 	gap: 2rem;
 	/* space between grid items */
