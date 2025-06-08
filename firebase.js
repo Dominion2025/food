@@ -23,9 +23,12 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getDatabase(app);
 
-export function saveUserChoice(id, thursdayLunch, thursdayDinner, fridayLunch, fridayDinner, saturdayLunch, saturdayDinner) {
+export function saveUserChoice(id, firstName, lastName, age, thursdayLunch, thursdayDinner, fridayLunch, fridayDinner, saturdayLunch, saturdayDinner) {
   const userRef = ref(db, `users/${id}`);
   set(userRef, {
+    firstName: firstName,
+    lastName: lastName,
+    age: age,
     thursdayLunch: thursdayLunch,
     thursdayDinner: thursdayDinner,
     fridayLunch: fridayLunch,

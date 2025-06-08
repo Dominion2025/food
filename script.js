@@ -9,6 +9,10 @@ let mealChoices = {
 	"saturday-dinner": ""
 };
 
+var firstName;
+var lastName;
+var age;
+
 let mealMetadata = {
 	"hot-dog": {
 		name: "All Beef Hot Dog",
@@ -224,10 +228,10 @@ async function submitCode() {
 						mealChoices['saturday-dinner'] = data.saturdayDinner || "none";
 					} else {
 						validation = "valid";
-						const nameSpan = document.getElementById('user-name');
-						if (nameSpan) {
-							nameSpan.textContent = values[3].innerHTML;
-						}
+						document.getElementById('user-name').textContent = values[3].innerHTML;
+						firstName = values[3].innerHTML;
+						lastName = values[4].innerHTML;
+						age = values[9].innerHTML;
 					}
 				}
 				break outerLoop;
@@ -255,6 +259,9 @@ window.selectMeal = selectMeal;
 async function submitForm(event) {
 	saveUserChoice(
 		document.getElementById('confirmation-code').value.trim(),
+		firstName,
+		lastName,
+		age,
 		mealChoices['thursday-lunch'],
 		mealChoices['thursday-dinner'],
 		mealChoices['friday-lunch'],
