@@ -25,7 +25,7 @@ let mealMetadata = {
 		description: "Tender chicken, smoky bacon, and melted cheese wrapped in golden, buttery dough."
 	},
 	"popeyes": {
-		name: "Popeyes Combo",
+		name: "Chicken Combo",
 		image: "Assets\\chicken.png",
 		description: "Crispy, golden-fried chicken paired with two soft dinner rolls."
 	},
