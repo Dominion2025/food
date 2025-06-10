@@ -92,7 +92,7 @@ let mealMetadata = {
 	"nigerian-chicken": {
 		name: "Jollof Rice w/ Chicken",
 		image: "Assets\\nigerian-chicken.png",
-		description: "Flavor-packed jollof rice served with tender, seasoned chicken and crispy, caramelized fried sweet plantains."
+		description: "Flavor-packed jollof rice served with tender, seasoned chicken."
 	},
 	"none": {
 		name: "No Meal",
