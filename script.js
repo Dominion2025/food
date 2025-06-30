@@ -226,6 +226,10 @@ async function submitCode() {
 						mealChoices['friday-dinner'] = data.fridayDinner || "none";
 						mealChoices['saturday-lunch'] = data.saturdayLunch || "none";
 						mealChoices['saturday-dinner'] = data.saturdayDinner || "none";
+						document.getElementById('user-name').textContent = values[3].innerHTML;
+						firstName = values[3].innerHTML;
+						lastName = values[4].innerHTML;
+						age = values[9].innerHTML;
 					} else {
 						validation = "valid";
 						document.getElementById('user-name').textContent = values[3].innerHTML;
